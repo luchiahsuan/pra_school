@@ -1,0 +1,63 @@
+.main,
+.top,
+.menu,
+.update,
+.marquee,
+.content,
+.footer {
+    border: 1px solid lightgray;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: '標楷體';
+    overflow: hidden;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+    width: 1024px;
+    margin: 0 auto;
+}
+
+.top {
+    flex-basis: 1000px;
+    height: 65px;
+}
+
+.aside {
+    display: flex;
+    flex-basis: 215px;
+    height: calc(768px - 65px - 20px);
+    flex-direction: column;
+}
+
+.menu {
+    flex-basis: calc(100% - 25px);
+}
+
+.update {
+    flex-basis: 25px;
+}
+
+.section {
+    flex-basis: calc(1000px - 215px);
+    display: flex;
+    flex-direction: column;
+}
+
+.marquee {
+    flex-basis: 29px;
+}
+
+.content {
+    flex-basis: calc(100% - 29px);
+}
+
+.footer {
+    flex-basis: 1000px;
+    height: 20px;
+}
