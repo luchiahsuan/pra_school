@@ -39,8 +39,30 @@
     flex-basis: calc(100% - 25px);
 }
 
+.menu-header {
+    font-size: 24px;
+    font-weight: 500px;
+    text-decoration: underline;
+    color: #FF00FF;
+    margin: 0 auto;
+}
+
+.menu>a {
+    display: block;
+    margin: 10px auto;
+    text-decoration: none;
+    width: 200px;
+    height: 35px;
+    background: url(../images/menu1.png)no-repeat;
+    padding: 10px;
+    font-size: 16px;
+    color: black;
+}
+.menu>a:hover{background: url(../images/menu2.png);}
+
 .update {
     flex-basis: 25px;
+    font-size: 16px;
 }
 
 .section {
@@ -51,6 +73,8 @@
 
 .marquee {
     flex-basis: 29px;
+    font-size: 24px;
+    color: #0000FF;
 }
 
 .content {
@@ -61,3 +85,6 @@
     flex-basis: 1000px;
     height: 20px;
 }
+
+iframe{height: 100%;
+width: 100%;}
