@@ -6,14 +6,17 @@
 .section,
 .marquee,
 .content,
-.footer{border: 1px solid lightgray;}
+.footer {
+    border: 1px solid lightgray;
+}
 
-*{font-family: "標楷體";
+* {
+    font-family: "標楷體";
     overflow: hidden;
     box-sizing: border-box;
 }
 
-.main{
+.main {
     /* height: 768px; */
     width: 1024px;
     justify-content: center;
@@ -21,46 +24,80 @@
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
-    
+
 }
 
-.top{
+.top {
     flex-basis: 1000px;
     height: 65px;
 }
 
-.aside{
+.aside {
     display: flex;
     flex-direction: column;
     flex-basis: 215px;
-height: calc(768px - 65px - 20px);
+    height: calc(768px - 65px - 20px);
 }
 
-.menu{
+.menu {
     flex-basis: calc(100% - 25px);
+
+
 }
 
-.update{
+.menu-header {
+    font-size: 24px;
+    text-decoration: underline;
+    color: #FF00FF;
+    font-weight: 500px;
+
+}
+
+.menu>a {
+    display: flex;
+    flex-direction: column;
+    background: url(../images/menu1.png)no-repeat;
+    width: 200px;
+    height: 35px;
+    margin: 10px auto;
+    padding: 10px;
+    display: block;
+    color: #000000;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.menu>a:hover {
+    background: url(../images/menu2.png);
+}
+
+.update {
+    font-size: 16px;
     flex-basis: 25px;
+    color: #000000;
 }
 
-.section{
+.section {
     display: flex;
     flex-direction: column;
     flex-basis: calc(1000px - 215px);
-height: calc(768px - 65px - 20px);
+    height: calc(768px - 65px - 20px);
 }
 
-.marquee{
+.marquee {
     flex-basis: 29px;
 }
 
-.content{
+.content {
     flex-basis: calc(100% - 29px);
+    color: #0000FF;
+    font-size: 24px;
 }
 
-.footer{flex-basis: 1000px;
-height: 20px;}
+.footer {
+    flex-basis: 1000px;
+    height: 20px;
+}
 
-
-
+iframe{height: 100%;
+width: 100%;}
