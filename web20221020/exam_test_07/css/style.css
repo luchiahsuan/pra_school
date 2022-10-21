@@ -42,8 +42,37 @@
     flex-basis: calc(100% - 25px);
 }
 
+.menu-header {
+    color: #FF00FF;
+    font-size: 24px;
+    text-decoration: underline;
+    margin: 0 auto;
+    font-weight: 500px;
+}
+
+.menu>a {
+    display: block;
+    display: flex;
+    flex-direction: column;
+    height: 35px;
+    width: 200px;
+    margin: 10px auto;
+    padding: 10px;
+    color: #000000;
+    font-size: 16px;
+    text-decoration: none;
+    background: url(../images/menu1.png);
+}
+
+.menu>a:hover {
+    background: url(../images/menu2.png);
+
+}
+
 .update {
     flex-basis: 25px;
+    font-size: 16px;
+    color: #000000;
 }
 
 .section {
@@ -53,9 +82,22 @@
     height: calc(768px - 65px - 20px);
 }
 
-.marquee {flex-basis: 29px;}
+.marquee {
+    flex-basis: 29px;
+    color: #0000FF;
+    font-size: 24px;
+}
 
-.content {flex-basis: calc(100% - 29px);}
+.content {
+    flex-basis: calc(100% - 29px);
+}
 
-.footer {flex-basis: 1000px;
-height: 20px;}
+.footer {
+    flex-basis: 1000px;
+    height: 20px;
+}
+
+iframe {
+    height: 100%;
+    width: 100%;
+}
