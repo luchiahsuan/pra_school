@@ -9,39 +9,28 @@
 </head>
 
 <body>
-    <h1>會員登入</h1>
+    <h1>會員登入-session版</h1>
     <?php
-
-    $showForm = true;
-
-    if (isset($_GET['result'])) {
-        switch ($_GET['result']) {
-            case 'success';
-                echo "<div style='color:green'>";
-                echo "帳密正確,登入成功";
-                echo "</div>";
-                break;
-            case 'fail';
-                echo "<div style='color:red'>";
-                echo "帳號或密碼錯誤,登入失敗";
-                echo "</div>";
+    session_start();
+    if (!isset($_SESSION['login'])) {
+        if (isset($_SESSION['error'])) {
+            echo "<span style='color:red'>";
+            echo $_SESSION['error'];
+            echo "</span>";
         }
-    }
-
-
     ?>
 
-    <?php
-    if ($showForm) {
-    ?>
 
-        <form action="check.php" method="post">
+        <form action="php1031_check.php" method="post">
             <div>帳號：<input type="text" name="acc"></div>
             <div>密碼：<input type="text" name="pw"></div>
             <div><input type="submit" value="登入"></div>
         </form>
 
     <?php
+
+    } else {
+        echo "登入成功";
     } ?>
 
 </body>
