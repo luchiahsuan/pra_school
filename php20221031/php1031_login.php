@@ -31,6 +31,8 @@
 
     } else {
         echo "登入成功";
+        echo"<a href='php1031_session_02.php'>會員中心</a>|";
+        echo"<a href='php1031_logout.php'>登出</a>";
     } ?>
 
 </body>
