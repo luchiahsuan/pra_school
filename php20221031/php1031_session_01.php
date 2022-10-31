@@ -18,8 +18,8 @@
     
     ?>
     <a href="./php1031_session_02.php">會員中心</a>|
-    <a href="./php1031_session_02.php">個人資料</a>|
-    <a href="./php1031_session_02.php">登出</a>
+    <a href="./php1031_session_03.php">個人資料</a>|
+    <a href="./php1031_logout.php">登出</a>
     
 </body>
 </html>
