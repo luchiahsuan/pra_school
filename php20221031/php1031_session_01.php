@@ -17,7 +17,8 @@
     echo $_SESSION['name'];
     
     ?>
-    <a href="./php1031_session_02.php">會員中心</a>
+    <a href="./php1031_session_02.php">會員中心</a>|
+    <a href="./php1031_session_02.php">個人資料</a>
     
 </body>
 </html>

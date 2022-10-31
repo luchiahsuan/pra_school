@@ -17,10 +17,8 @@
 
     echo "HI ";
     echo $_SESSION['name'];
-    
-    
+
     ?>
-    <a href="./php1031_session_03.php">個人資料</a>
 
 </body>
 
