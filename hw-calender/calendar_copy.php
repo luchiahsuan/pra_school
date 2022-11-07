@@ -13,30 +13,131 @@
             padding: 0;
         }
 
-        table {
-            border-collapse: collapse;
-        }
-
-        table td {
-            border: 1px solid #ccc;
-            padding: 3px 9px;
-            width: 60px;
-            margin: auto;
+        body {
+            background-color: black;
 
         }
 
-        .cal {
+        .month {
+            display: flex;
+            flex-direction: row;
+            width: 80%;
+            height: 500px;
+            margin: 0 auto;
+            margin-top: 50px;
+            
+        }
+
+        .month-l {
+            flex-basis: 350px;
+            background-color: lightblue;
+            border: 1px solid black;
+            text-align: center;
+        }
+
+        .l-year {
+            margin-top: 50px;
+            font-size: 7vh;
+        }
+
+        .l-month {
+            font-size: 25vh;
+        }
+
+
+        .month-r {
+            border: 1px solid black;
+            flex-basis: 500px;
+            margin-left: -1px;
+            background-color: lightgray;
+
+        }
+
+        .prenext-m {
+            display: flex;
+            width: 80%;
+            margin: 0 auto;
+            margin-top: 50px;
+        }
+
+        .prenext-te {
+            font-size: 2vh;
+            height: 30px;
+            line-height: 30px;
+        }
+
+        .prenext-ar {
+            display: flex;
+            font-size: 2.5vh;
+            height: 30px;
+            line-height: 30px;
+            margin-left:175px ;
+        }
+
+        .prenext-ar2 {
+            background-color: lightcoral;
+            margin-left: 10px;
+            padding: 0 8px 0 8px;
+
+        }
+
+        .prenext-ar1 {
+            background-color: lightcoral;
+            padding: 0 8px 0 8px;
+
+        }
+
+        .prenext-ar1>a,
+        .prenext-ar2>a {
+            color: wheat;
+
+            text-decoration: none;
+            font-size: larger;
+        }
+
+        .week,
+        .day {
+            height: 50px;
+            line-height: 50px;
+        }
+
+        .week {
             display: flex;
             flex-wrap: wrap;
             width: 80%;
             margin: 0 auto;
+            margin-top: 15px;
+            margin-bottom: 1px;
+            background-color: lightgoldenrodyellow;
         }
 
-        .day {
-            border: 1px solid lightsalmon;
+        .date {
+            /* border: 1px solid lightsalmon; */
             width: calc(100% / 7);
             margin-left: -1px;
             margin-bottom: -1px;
+            text-align: center;
+
+        }
+
+        .days {
+            background-color: lightgoldenrodyellow;
+            display: flex;
+            flex-wrap: wrap;
+            width: 80%;
+            margin: 0 auto;
+
+        }
+
+        .day:hover{
+            background-color: lightcoral;
+        }
+        .day {
+            /* border: 1px solid lightgray; */
+            width: calc(100% / 7);
+            margin-left: -1px;
+            margin-bottom: -1px;
+            text-align: center;
         }
     </style>
 </head>
@@ -134,36 +235,59 @@
             $cal[] = '';
         }
 
-        /* echo "<pre>";
-print_r($cal);
-echo "</pre>"; */
-
-        echo "第一天" . $firstDay . "星期" . $firstDayWeek;
-        echo "<br>";
-        echo "該月共" . $monthDays . "天,最後一天是" . $lastDay;
-        echo "<br>";
-        echo "月曆天數共" . $monthDays . "天，" . $weeks . "周";
+        // echo "第一天" . $firstDay . "星期" . $firstDayWeek;
+        // echo "<br>";
+        // echo "該月共" . $monthDays . "天,最後一天是" . $lastDay;
+        // echo "<br>";
+        // echo "月曆天數共" . $monthDays . "天，" . $weeks . "周";
 
         ?>
 
 
-        <div style="display:flex;width:80%;justify-content:space-between;align-items:center">
-            <a href="?y=<?= $preyear ?>&m=<?= $prevMonth; ?>">上一個月</a>
-            <h1><?= $year; ?> 年 <?= $month; ?> 月份</h1>
-            <a href="?y=<?= $nextyear ?>&m=<?= $nextMonth; ?>">下一個月</a>
-        </div>
-        <div class="cal">
-            <?php
-            // 用$i的內容當$cal的陣列數值顯示$day
-            foreach ($cal as $i => $day) {
 
-                echo "<div class='day'>";
+        <div class="month">
+            <div class="month-l">
+                <div class="l-year"><?= $year; ?></div>
+                <div class="l-month"><?= $month; ?></div>
+                <div class="l-day"><?= date("d") ?></div>
 
-                echo "$day";
-                echo "</div>";
-            }
+            </div>
+            <div class="month-r">
+                <div class="prenext-m">
+                    <div class="prenext-te">
+                        <h1><?= $year; ?> - <?= $month; ?> </h1>
+                    </div>
+                    <div class="prenext-ar">
+                        <div class="prenext-ar1">
+                            <a href="?y=<?= $preyear ?>&m=<?= $prevMonth; ?>">
+                                < </a>
+                        </div>
+                        <div class="prenext-ar2">
+                            <a href="?y=<?= $nextyear ?>&m=<?= $nextMonth; ?>"> > </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="week">
+                    <div class="date">Mon.</div>
+                    <div class="date">Tue.</div>
+                    <div class="date">Wed.</div>
+                    <div class="date">Thur.</div>
+                    <div class="date">Fri.</div>
+                    <div class="date">Sat.</div>
+                    <div class="date">Sun.</div>
+                </div>
+                <div class="days">
+                    <?php
+                    // 用$i的內容當$cal的陣列數值顯示$day
+                    foreach ($cal as $i => $day) {
+                        echo "<div class='day'>";
+                        echo "$day";
+                        echo "</div>";
+                    }
 
-            ?>
+                    ?>
+                </div>
+            </div>
         </div>
 </table>
 </body>
