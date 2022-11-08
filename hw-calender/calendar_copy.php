@@ -6,34 +6,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>萬年曆</title>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         * {
             box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+            margin: 0 auto;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         }
 
-        body {
-            background-color: black;
-
-        }
 
         .month {
             display: flex;
-            flex-direction: row;
-            width: 80%;
-            height: 500px;
             margin: 0 auto;
+            flex-direction: row;
+            width: 1000px;
+            height: 600px;
             margin-top: 50px;
-            
         }
 
-        .month-l {
-            flex-basis: 350px;
+        .month-l1 {
+            border-radius: 70px 0 70px 0;
+            flex-basis: 400px;
             background-color: lightblue;
-            border: 1px solid black;
+            box-shadow: -20px -20px 8px -2px rgba(0, 0, 0, 0.5);
             text-align: center;
         }
+
+        /* .month-l2 {
+            height: 600px;
+            width: 500px;
+            background-color: lightblue;
+        } */
 
         .l-year {
             margin-top: 50px;
@@ -44,100 +48,102 @@
             font-size: 25vh;
         }
 
-
         .month-r {
-            border: 1px solid black;
-            flex-basis: 500px;
+            border-radius: 0 100px 0 100px;
+            flex-basis: 600px;
             margin-left: -1px;
             background-color: lightgray;
-
+            box-shadow: -20px 20px 8px -2px rgba(0, 0, 0, 0.4);
+            position: relative;
         }
 
         .prenext-m {
-            display: flex;
+            display: inline-block;
             width: 80%;
             margin: 0 auto;
-            margin-top: 50px;
+            margin-top: 55px;
         }
 
-        .prenext-te {
-            font-size: 2vh;
-            height: 30px;
-            line-height: 30px;
+        .prenext-y {
+            font-size: 70px;
+            opacity: 0.3;
+            position: absolute;
+            margin-top: -25px;
         }
 
-        .prenext-ar {
+        .prenext-m1 {
+            font-size: 70px;
+            opacity: 0.3;
+            margin-top: -5px;
+            margin-left: 380px;
+            text-align: right;
+        }
+
+        .prenext-h {
             display: flex;
-            font-size: 2.5vh;
-            height: 30px;
-            line-height: 30px;
-            margin-left:175px ;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 80%;
+            text-align: center;
+
         }
 
+        .prenext-ar1,
         .prenext-ar2 {
-            background-color: lightcoral;
-            margin-left: 10px;
-            padding: 0 8px 0 8px;
-
-        }
-
-        .prenext-ar1 {
-            background-color: lightcoral;
-            padding: 0 8px 0 8px;
-
-        }
-
-        .prenext-ar1>a,
-        .prenext-ar2>a {
-            color: wheat;
-
-            text-decoration: none;
-            font-size: larger;
-        }
-
-        .week,
-        .day {
+            font-size: 30px;
+            margin-top: 250px;
             height: 50px;
             line-height: 50px;
         }
 
+        .prenext-ar1>a,
+        .prenext-ar2>a {
+            color: black;
+            text-decoration: none;
+        }
+
+        /* 一週+31天 */
+        .week,
+        .day {
+            height: 50px;
+            line-height: 50px;
+            font-family: 'Courier New', Courier, monospace;
+
+        }
+
+        /* 一週那條 */
         .week {
             display: flex;
             flex-wrap: wrap;
-            width: 80%;
             margin: 0 auto;
-            margin-top: 15px;
-            margin-bottom: 1px;
+            margin-top: 120px;
             background-color: lightgoldenrodyellow;
         }
 
+        /* 星期幾單天 */
         .date {
-            /* border: 1px solid lightsalmon; */
             width: calc(100% / 7);
             margin-left: -1px;
             margin-bottom: -1px;
-            text-align: center;
-
         }
 
+        /* 1-31一個月 */
         .days {
             background-color: lightgoldenrodyellow;
             display: flex;
             flex-wrap: wrap;
-            width: 80%;
             margin: 0 auto;
-
         }
 
-        .day:hover{
+        .day:hover {
             background-color: lightcoral;
         }
+
+        /* 1-31每天 */
         .day {
-            /* border: 1px solid lightgray; */
             width: calc(100% / 7);
             margin-left: -1px;
             margin-bottom: -1px;
-            text-align: center;
         }
     </style>
 </head>
@@ -147,43 +153,8 @@
 
     <body>
         <?php
-        // //先獲取日期
-        // if(isset($_GET['yeardown'])){  //年減少，年份往前推
-        //     $year=$_GET['year']-1;
-        //     $month=$_GET['month'];
-        //     $today=date("d");
-        // }
-        // else if(isset($_GET['yearup'])){  //年增加，年份往後推
-        //     $year=$_GET['year']+1;
-        //     $month=$_GET['month'];
-        //     $today=date("d");
-        // }
-        // else if(isset($_GET['monthdown'])){  //月減少，月份往前推
-        //     $year=$_GET['year'];
-        //     $month=$_GET['month']-1;
-        //     $today=date("d");
-        //     if ($month==0){          //遇到零月，年份減1，月份變12
-        //         $month=12;
-        //         $year--;
-        //     }
-
-        // }
-        // else if(isset($_GET['monthup'])){   //月增加，月份往後推
-        //     $year=$_GET['year'];
-        //     $month=$_GET['month']+1;
-        //     $today=date("d");
-        //     if ($month==13){    //月變爲13時，年加1，月變爲1
-        //         $month=1;
-        //         $year++;
-        //     }
-        // }
-        // else{       //一開始沒有傳參時，獲取當前年月日
-        //     $year=date("Y");
-        //     $month=date("m");
-        //     $today=date("d");
-        // }
-
-
+        date_default_timezone_set('Asia/Taipei');
+        $now=date('H:i');
         $cal = [];
         // 如果有要求年月就顯示要求的,如無要求則顯示當下年月
         $month = (isset($_GET['m'])) ? $_GET['m'] : date("m");
@@ -205,8 +176,6 @@
         }
 
 
-
-
         // date(日期,想要的時間)
         $firstDay = $year . "-" . $month . "-1";
         // N數字代表星期幾 1-7=一到日
@@ -219,8 +188,6 @@
         // ceil為無條件捨去
         $weeks = ceil(($monthDays + $spaceDays) / 7);
         $lastSpaceDays = $weeks * 7 - $monthDays - $spaceDays;
-
-        $a = array("星期一", "星期二", "星期三", "星期四", "星期五", "星期六", "星期日");
 
         for ($i = 0; $i < $spaceDays; $i++) {
             $cal[] = '';
@@ -235,60 +202,59 @@
             $cal[] = '';
         }
 
-        // echo "第一天" . $firstDay . "星期" . $firstDayWeek;
-        // echo "<br>";
-        // echo "該月共" . $monthDays . "天,最後一天是" . $lastDay;
-        // echo "<br>";
-        // echo "月曆天數共" . $monthDays . "天，" . $weeks . "周";
-
         ?>
 
-
-
+        <div class="shaow-u"></div>
         <div class="month">
-            <div class="month-l">
-                <div class="l-year"><?= $year; ?></div>
+            <div class="month-l1">
+            What’s the time?
+
+                <div class="l-year"><?= $now; ?></div>
                 <div class="l-month"><?= $month; ?></div>
                 <div class="l-day"><?= date("d") ?></div>
-
             </div>
-            <div class="month-r">
-                <div class="prenext-m">
-                    <div class="prenext-te">
-                        <h1><?= $year; ?> - <?= $month; ?> </h1>
-                    </div>
-                    <div class="prenext-ar">
-                        <div class="prenext-ar1">
-                            <a href="?y=<?= $preyear ?>&m=<?= $prevMonth; ?>">
-                                < </a>
-                        </div>
-                        <div class="prenext-ar2">
-                            <a href="?y=<?= $nextyear ?>&m=<?= $nextMonth; ?>"> > </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="week">
-                    <div class="date">Mon.</div>
-                    <div class="date">Tue.</div>
-                    <div class="date">Wed.</div>
-                    <div class="date">Thur.</div>
-                    <div class="date">Fri.</div>
-                    <div class="date">Sat.</div>
-                    <div class="date">Sun.</div>
-                </div>
-                <div class="days">
-                    <?php
-                    // 用$i的內容當$cal的陣列數值顯示$day
-                    foreach ($cal as $i => $day) {
-                        echo "<div class='day'>";
-                        echo "$day";
-                        echo "</div>";
-                    }
 
-                    ?>
+            <div class="month-r">
+                <div class="prenext-y">
+                    <h1><?= $year; ?></h1>
+                </div>
+                <div class="prenext-h">
+                    <div class="prenext-ar1">
+                        <a href="?y=<?= $preyear ?>&m=<?= $prevMonth; ?>">
+                            <i class="fa-solid fa-arrow-left"></i> </a>
+                    </div>
+                    <div class="prenext-wd">
+                        <div class="week">
+                            <div class="date">Mon.</div>
+                            <div class="date">Tue.</div>
+                            <div class="date">Wed.</div>
+                            <div class="date">Thu.</div>
+                            <div class="date">Fri.</div>
+                            <div class="date">Sat.</div>
+                            <div class="date">Sun.</div>
+                        </div>
+                        <div class="days">
+                            <?php
+                            // 用$i的內容當$cal的陣列數值顯示$day
+                            foreach ($cal as $i => $day) {
+                                echo "<div class='day'>";
+                                echo "$day";
+                                echo "</div>";
+                            }
+                            ?>
+                        </div>
+                    </div>
+                    <div class="prenext-ar2">
+                        <a href="?y=<?= $nextyear ?>&m=<?= $nextMonth; ?>"><i class="fa-solid fa-arrow-right"></i> </a>
+                    </div>
+                </div>
+
+                <div class="prenext-m1">
+                    <h1><?= $month; ?> </h1>
                 </div>
             </div>
         </div>
+
 </table>
 </body>
 
