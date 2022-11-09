@@ -72,9 +72,9 @@
         }
 
         .prenext-m1 {
-            font-size: 70px;
+            font-size: 85px;
             opacity: 0.3;
-            margin-top: -5px;
+            margin-top: -30px;
             margin-left: 380px;
             text-align: right;
         }
@@ -118,6 +118,8 @@
             margin: 0 auto;
             margin-top: 120px;
             background-color: lightgoldenrodyellow;
+            border-radius: 0 30px 0 0;
+
         }
 
         /* 星期幾單天 */
@@ -127,20 +129,30 @@
             margin-bottom: -1px;
         }
 
+        .holiday:hover {
+            background-color: lightseagreen;
+font-size: larger;
+        }
+
         /* 1-31一個月 */
         .days {
             background-color: lightgoldenrodyellow;
             display: flex;
             flex-wrap: wrap;
             margin: 0 auto;
+            margin-top: 5px;
+            border-radius: 0 0 0 30px;
+
         }
 
         .day:hover {
             background-color: lightcoral;
         }
 
+
         /* 1-31每天 */
         .day {
+            font-weight: bold;
             width: calc(100% / 7);
             margin-left: -1px;
             margin-bottom: -1px;
@@ -154,8 +166,10 @@
     <body>
         <?php
         date_default_timezone_set('Asia/Taipei');
-        $now=date('H:i');
+        $now = date('H:i');
         $cal = [];
+        $hy=date('y');
+        $holiday = ["2022-10-25" => "光復節", "2022-10-10" => "國慶日"];
         // 如果有要求年月就顯示要求的,如無要求則顯示當下年月
         $month = (isset($_GET['m'])) ? $_GET['m'] : date("m");
         $year = (isset($_GET['y'])) ? $_GET['y'] : date("Y");
@@ -195,7 +209,7 @@
 
         for ($i = 0; $i < $monthDays; $i++) {
             // d代表月分中的第幾天 沒有前導0 1-31
-            $cal[] = date("d", strtotime("+$i days", strtotime($firstDay)));
+            $cal[] = date("Y-m-d", strtotime("+$i days", strtotime($firstDay)));
         }
 
         for ($i = 0; $i < $lastSpaceDays; $i++) {
@@ -207,7 +221,7 @@
         <div class="shaow-u"></div>
         <div class="month">
             <div class="month-l1">
-            What’s the time?
+                What’s the time?
 
                 <div class="l-year"><?= $now; ?></div>
                 <div class="l-month"><?= $month; ?></div>
@@ -235,11 +249,23 @@
                         </div>
                         <div class="days">
                             <?php
-                            // 用$i的內容當$cal的陣列數值顯示$day
                             foreach ($cal as $i => $day) {
-                                echo "<div class='day'>";
-                                echo "$day";
-                                echo "</div>";
+                                if ($day != "") {
+                                    $show = explode("-", $day)[2];
+                                } else {
+                                    $show = "";
+                                }
+
+                                if (array_key_exists($day, $holiday)) {
+
+                                    echo "<div class='holiday'>";
+                                    echo $show;
+                                    echo "<div>{$holiday[$day]}</div>";
+                                    echo "</div>";
+                                } else {
+
+                                    echo "<div class='day'>$show</div>";
+                                }
                             }
                             ?>
                         </div>
