@@ -12,7 +12,6 @@
         * {
             box-sizing: border-box;
             margin: 0 auto;
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         }
 
 
@@ -20,37 +19,64 @@
             display: flex;
             margin: 0 auto;
             flex-direction: row;
-            width: 1000px;
-            height: 600px;
-            margin-top: 50px;
+            width: 1500px;
+            height: 900px;
+            margin-top: 150px;
         }
 
-        .month-l1 {
-            border-radius: 70px 0 70px 0;
-            flex-basis: 400px;
-            background-color: lightblue;
+        .word {
+            margin-top: 100px;
+            font-size: 40px;
+            border-style: solid none solid none;
+            padding: 10px 0 10px 0;
+
+        }
+
+        .sp,
+        .sum,
+        .aut,
+        .win {
+            border-radius: 100px 0 100px 0;
+            flex-basis: 600px;
             box-shadow: -20px -20px 8px -2px rgba(0, 0, 0, 0.5);
             text-align: center;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
         }
 
-        /* .month-l2 {
-            height: 600px;
-            width: 500px;
-            background-color: lightblue;
-        } */
 
-        .l-year {
-            margin-top: 50px;
-            font-size: 7vh;
+
+        .sp {
+            background-color: #76c0ef;
+
         }
 
-        .l-month {
-            font-size: 25vh;
+        .sum {
+            background-color: #ffa500;
+        }
+
+        .aut {
+            background-color: #d2691e;
+        }
+
+        .win {
+            color: white;
+            background-color: #4F9D9D;
+        }
+
+        .l-now {
+            margin-top: 70px;
+            font-size: 120px;
+        }
+
+        .img>img {
+            border-radius: 20%;
+            margin-top: 80px;
         }
 
         .month-r {
-            border-radius: 0 100px 0 100px;
-            flex-basis: 600px;
+            border-radius: 0 130px 0 130px;
+            flex-basis: 900px;
             margin-left: -1px;
             background-color: lightgray;
             box-shadow: -20px 20px 8px -2px rgba(0, 0, 0, 0.4);
@@ -59,24 +85,24 @@
 
         .prenext-m {
             display: inline-block;
-            width: 80%;
             margin: 0 auto;
             margin-top: 55px;
         }
 
         .prenext-y {
-            font-size: 70px;
+            font-size: 90px;
             opacity: 0.3;
             position: absolute;
             margin-top: -25px;
         }
 
         .prenext-m1 {
-            font-size: 85px;
+            font-size: 100px;
             opacity: 0.3;
             margin-top: -30px;
             margin-left: 380px;
             text-align: right;
+            font-family: Georgia, 'Times New Roman', Times, serif;
         }
 
         .prenext-h {
@@ -91,7 +117,7 @@
         .prenext-ar1,
         .prenext-ar2 {
             font-size: 30px;
-            margin-top: 250px;
+            margin-top: 400px;
             height: 50px;
             line-height: 50px;
         }
@@ -105,10 +131,16 @@
         /* 一週+31天 */
         .week,
         .day {
-            height: 50px;
-            line-height: 50px;
+            height: 80px;
+            line-height: 80px;
             font-family: 'Courier New', Courier, monospace;
 
+        }
+
+        .holiday {
+            height: 80px;
+            line-height: 40px;
+            width: calc(100% / 7);
         }
 
         /* 一週那條 */
@@ -116,22 +148,20 @@
             display: flex;
             flex-wrap: wrap;
             margin: 0 auto;
-            margin-top: 120px;
+            margin-top: 160px;
             background-color: lightgoldenrodyellow;
-            border-radius: 0 30px 0 0;
+            border-radius: 0 50px 0 0;
+            font-size: larger;
 
         }
 
         /* 星期幾單天 */
         .date {
             width: calc(100% / 7);
-            margin-left: -1px;
-            margin-bottom: -1px;
         }
 
         .holiday:hover {
             background-color: lightseagreen;
-font-size: larger;
         }
 
         /* 1-31一個月 */
@@ -140,8 +170,8 @@ font-size: larger;
             display: flex;
             flex-wrap: wrap;
             margin: 0 auto;
-            margin-top: 5px;
-            border-radius: 0 0 0 30px;
+            margin-top: 10px;
+            border-radius: 0 0 0 50px;
 
         }
 
@@ -154,8 +184,6 @@ font-size: larger;
         .day {
             font-weight: bold;
             width: calc(100% / 7);
-            margin-left: -1px;
-            margin-bottom: -1px;
         }
     </style>
 </head>
@@ -164,15 +192,18 @@ font-size: larger;
 
 
     <body>
+
         <?php
         date_default_timezone_set('Asia/Taipei');
         $now = date('H:i');
         $cal = [];
-        $hy=date('y');
-        $holiday = ["2022-10-25" => "光復節", "2022-10-10" => "國慶日"];
+        $hy = date('y');
         // 如果有要求年月就顯示要求的,如無要求則顯示當下年月
         $month = (isset($_GET['m'])) ? $_GET['m'] : date("m");
         $year = (isset($_GET['y'])) ? $_GET['y'] : date("Y");
+        $holiday = [
+            '2023-05-09' => "B-day"
+        ];
 
 
         $preyear = $year;
@@ -215,18 +246,47 @@ font-size: larger;
         for ($i = 0; $i < $lastSpaceDays; $i++) {
             $cal[] = '';
         }
-
         ?>
 
-        <div class="shaow-u"></div>
         <div class="month">
-            <div class="month-l1">
-                What’s the time?
+            <!-- <div class="hyear"> -->
+            <!-- <div class="month-l1"> -->
+            <!-- What’s the time?
 
-                <div class="l-year"><?= $now; ?></div>
+                <div class="l-now"><?= $now; ?></div>
                 <div class="l-month"><?= $month; ?></div>
-                <div class="l-day"><?= date("d") ?></div>
-            </div>
+                <div class="l-day"><?= date("d") ?></div> -->
+            <?php
+
+
+            if ($month >= 2 && $month <= 4) {
+                echo "<div class='sp'>
+                <div class='word'>- Spring is around the corner -</div>
+                <div class='l-now'>" . $now . "</div>
+                <div class='img'><img src='./image/sp.jpg' alt='sp'></div>
+                </div>";
+            } else if ($month >= 5 && $month <= 7) {
+                echo "<div class='sum'>
+                <div class='word'>- It's SUMMER time -</div>
+                <div class='l-now'>" . $now . "</div>
+                <div class='img'><img src='./image/sum.jpg' alt='sum'></div>
+                </div>";
+            } else if ($month >= 8 && $month <= 10) {
+                echo "<div class='aut'>
+                <div class='word'>- Maple leaves turn red -</div>
+                <div class='l-now'>" . $now . "</div>
+                <div class='img'><img src='./image/aut.jpg' alt='aut'></div>
+                </div>";
+            } else if ($month >= 11 || $month = 1) {
+                echo "<div class='win'>
+                <div class='word'>- Time to sleep well -</div>
+                <div class='l-now'>" . $now . "</div>
+                <div class='img'><img src='./image/win.jpg' alt='win'></div>
+                </div>";
+            }
+            ?>
+            <!-- </div> -->
+
 
             <div class="month-r">
                 <div class="prenext-y">
@@ -276,7 +336,33 @@ font-size: larger;
                 </div>
 
                 <div class="prenext-m1">
-                    <h1><?= $month; ?> </h1>
+                    <h1><?php
+                        if ($month == 1) {
+                            echo "JAN.";
+                        } elseif ($month == 2) {
+                            echo "FEB.";
+                        } elseif ($month == 3) {
+                            echo "MAR.";
+                        } elseif ($month == 4) {
+                            echo "APR.";
+                        } elseif ($month == 5) {
+                            echo "MAY.";
+                        } elseif ($month == 6) {
+                            echo "JUN.";
+                        } elseif ($month == 7) {
+                            echo "JUL.";
+                        } elseif ($month == 8) {
+                            echo "AUG.";
+                        } elseif ($month == 9) {
+                            echo "SEP.";
+                        } elseif ($month == 10) {
+                            echo "OCT.";
+                        } elseif ($month == 11) {
+                            echo "NOV.";
+                        } else {
+                            echo "DEC.";
+                        }
+                        ?> </h1>
                 </div>
             </div>
         </div>
