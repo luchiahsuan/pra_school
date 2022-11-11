@@ -9,6 +9,7 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Dancing+Script">
 </head>
 <table>
 
@@ -25,7 +26,16 @@
         $month = (isset($_GET['m'])) ? $_GET['m'] : date("m");
         $year = (isset($_GET['y'])) ? $_GET['y'] : date("Y");
         $holiday = [
-            '2023-05-09' => "B-day"
+            $year . '-01-01' => "元旦",
+            $year . '-02-28' => "紀念日",
+            $year . '-04-01' => "愚人節",
+            $year . '-04-04' => "兒童節",
+            $year . '-04-05' => "清明節",
+            $year . '-06-03' => "端午節",
+            $year . '-09-15' => "中秋節",
+            $year . '-10-10' => "雙十節",
+            $year . '-12-25' => "聖誕節",
+
         ];
 
 
@@ -72,15 +82,7 @@
         ?>
 
         <div class="month">
-            <!-- <div class="hyear"> -->
-            <!-- <div class="month-l1"> -->
-            <!-- What’s the time?
-
-                <div class="l-now"><?= $now; ?></div>
-                <div class="l-month"><?= $month; ?></div>
-                <div class="l-day"><?= date("d") ?></div> -->
             <?php
-
 
             if ($month >= 2 && $month <= 4) {
                 echo "<div class='sp'>
@@ -90,7 +92,7 @@
                 </div>";
             } else if ($month >= 5 && $month <= 7) {
                 echo "<div class='sum'>
-                <div class='word'>- It's SUMMER time -</div>
+                <div class='word'>- It's Summer time -</div>
                 <div class='l-now'>" . $now . "</div>
                 <div class='img'><img src='./image/sum.jpg' alt='sum'></div>
                 </div>";
