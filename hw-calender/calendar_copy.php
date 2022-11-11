@@ -122,13 +122,13 @@
                     </div>
                     <div class="prenext-wd">
                         <div class="week">
-                            <div class="date">Mon.</div>
-                            <div class="date">Tue.</div>
-                            <div class="date">Wed.</div>
-                            <div class="date">Thu.</div>
-                            <div class="date">Fri.</div>
-                            <div class="date">Sat.</div>
-                            <div class="date">Sun.</div>
+                            <div class="date">Mon</div>
+                            <div class="date">Tue</div>
+                            <div class="date">Wed</div>
+                            <div class="date">Thu</div>
+                            <div class="date">Fri</div>
+                            <div class="date">Sat</div>
+                            <div class="date">Sun</div>
                         </div>
                         <div class="days">
                             <?php
@@ -161,29 +161,29 @@
                 <div class="prenext-m1">
                     <h1><?php
                         if ($month == 1) {
-                            echo "JAN.";
+                            echo "JAN";
                         } elseif ($month == 2) {
-                            echo "FEB.";
+                            echo "FEB";
                         } elseif ($month == 3) {
-                            echo "MAR.";
+                            echo "MAR";
                         } elseif ($month == 4) {
-                            echo "APR.";
+                            echo "APR";
                         } elseif ($month == 5) {
-                            echo "MAY.";
+                            echo "MAY";
                         } elseif ($month == 6) {
-                            echo "JUN.";
+                            echo "JUN";
                         } elseif ($month == 7) {
-                            echo "JUL.";
+                            echo "JUL";
                         } elseif ($month == 8) {
-                            echo "AUG.";
+                            echo "AUG";
                         } elseif ($month == 9) {
-                            echo "SEP.";
+                            echo "SEP";
                         } elseif ($month == 10) {
-                            echo "OCT.";
+                            echo "OCT";
                         } elseif ($month == 11) {
-                            echo "NOV.";
+                            echo "NOV";
                         } else {
-                            echo "DEC.";
+                            echo "DEC";
                         }
                         ?> </h1>
                 </div>

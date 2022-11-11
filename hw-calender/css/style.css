@@ -72,37 +72,38 @@
     position: relative;
 }
 
-.prenext-m {
-    display: inline-block;
+/* .prenext-m {
     margin: 0 auto;
     margin-top: 55px;
-}
-
+} */
+/* 右上年 */
 .prenext-y {
     font-size: 90px;
     opacity: 0.3;
     position: absolute;
     margin-top: -25px;
 }
-
+/* 右下月英文 */
 .prenext-m1 {
+    width: 300px;
+    display: inline-block;
     font-size: 100px;
     opacity: 0.3;
     margin-top: -30px;
-    margin-left: 380px;
+    margin-left: 520px;
     text-align: right;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: 'Courier New', Courier, monospace;
 }
-
+/* 整個周+天 */
 .prenext-h {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 80%;
+    width: 750px;
     text-align: center;
 
 }
-
+/* 上下月箭頭 */
 .prenext-ar1,
 .prenext-ar2 {
     font-size: 30px;
@@ -120,6 +121,8 @@
 /* 一週+31天 */
 .week,
 .day {
+    display: inline-block;
+
     height: 80px;
     line-height: 80px;
     font-family: 'Courier New', Courier, monospace;
@@ -129,7 +132,7 @@
 .holiday {
     height: 80px;
     line-height: 40px;
-    width: calc(100% / 7);
+    width: 90px;
 }
 
 /* 一週那條 */
@@ -146,11 +149,12 @@
 
 /* 星期幾單天 */
 .date {
-    width: calc(100% / 7);
+    width: 80px;
 }
 
-.holiday:hover {
-    background-color: lightseagreen;
+.holiday {
+    border-radius: 55px;
+    background-color: rgb(154, 225, 247);
 }
 
 /* 1-31一個月 */
@@ -165,6 +169,7 @@
 }
 
 .day:hover {
+    border-radius: 55px;
     background-color: lightcoral;
 }
 
@@ -172,5 +177,5 @@
 /* 1-31每天 */
 .day {
     font-weight: bold;
-    width: calc(100% / 7);
+    width: 90px;
 }
