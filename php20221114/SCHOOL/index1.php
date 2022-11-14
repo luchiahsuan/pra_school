@@ -21,9 +21,9 @@
 
 <body>
     <h1>學生管理系統</h1>
-    <a href="add_students.php">新增學生</a>
-    <a href="">教師註冊</a>
-    <a href="">教師登入</a>
+    <a href="add.php" class="button">新增學生</a>
+    <a href="reg.php" class="button">教師註冊</a>
+    <a href="login.php" class="button">教師登入</a>
     
     <table class="list-students">
     <tr>
@@ -44,8 +44,8 @@
         echo "<td>{$row['graduate_at']}</td>";
         echo "<td>$age</td>";
         echo "<td>";
-        echo "<a href='edit_student.php?id={$row['id']}'> 編輯";
-        echo "<a href='delete_students.php?id={$row['id']}'> 移除";
+        echo "<a href='edit_student.php?id={$row['id']}' class='editbtn'> 編輯";
+        echo "<a href='delete_students.php?id={$row['id']}' class='delbtn'> 移除";
         echo "</td>";
 
         echo "</tr>";
