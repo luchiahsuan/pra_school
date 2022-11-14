@@ -21,6 +21,9 @@
 
 <body>
     <h1>學生管理系統</h1>
+    <a href="add_students.php">新增學生</a>
+    <a href="">教師註冊</a>
+    <a href="">教師登入</a>
     
     <table class="list-students">
     <tr>
@@ -29,6 +32,7 @@
     <td>生日</td>
     <td>畢業國中</td>
     <td>年齡</td>
+    <td>操作</td>
 </tr>
     <?php
     foreach ($rows as $row) {
@@ -39,6 +43,11 @@
         echo "<td>{$row['birthday']}</td>";
         echo "<td>{$row['graduate_at']}</td>";
         echo "<td>$age</td>";
+        echo "<td>";
+        echo "<a href='edit_student.php?id={$row['id']}'> 編輯";
+        echo "<a href='delete_students.php?id={$row['id']}'> 移除";
+        echo "</td>";
+
         echo "</tr>";
     }
 

@@ -3,11 +3,8 @@ $dsn="mysql:host=localhost;charest=utf8;
 dbname=school";
 $pdo=new PDO($dsn,'root','');
 
-$sql="DELETE FROM`students` WHERE`name`='陳彥明'";
+$sql="UPDATE `students` SET `name`='丁小雨' WHERE `id`='1'";
 
 //$pdo->query($sql);
 $res=$pdo->exec($sql);
-echo"移除成功:".$res;
-
-
-?>
+echo"編輯成功:".$res;
