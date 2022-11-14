@@ -12,18 +12,38 @@ $dsn="mysql:host=localhost;charest=utf8;
 dbname=school";
 $pdo=new PDO($dsn,'root','');
 
+$school_num=$_POST['school_num'];
+$name=$_POST['name']; 
+$birthday=$_POST['birthday'];
+$uni_id=$_POST['uni_id'];
+$addr=$_POST['addr'];
+$parents=$_POST['parents'];
+$tel=$_POST['tel'];
+$dept=$_POST['dept']; 
+$graduate_at=$_POST['graduate_at'];
+$status_code=$_POST['status_code'];
+
+$classes=$_POST['classes'];
+$year=2000;
+
+$seat_num=$pdo->query("SELECT max(`seat_num`) FROM `class_student` WHERE `class_code`='$classes'")->fetchColumn()+1;
+
 $sql="INSERT INTO `students` 
 (`id`, `school_num`, `name`, 
 `birthday`, `uni_id`, `addr`, 
 `parents`, `tel`, `dept`, 
 `graduate_at`, `status_code`) VALUES 
-(NULL, '915084', '陳彥明', 
-'1995-10-23', 'F100004523', '台中縣太平市復興街503號', 
-'陳家騏', '02450238', '2', 
-'23', '001')";
+(NULL, '$school_num', '$name', 
+'$birthday', '$uni_id', '$addr', 
+'$parents', '$tel', '$dept', 
+'$graduate_at', '$status_code')";
+
+$sql_class="INSERT INTO `class_student`(`$school_num`,`$classes_code`,`$seat_num`,`$year`)
+values('$school_num','$classes_code','$seat_num','$year')";
 
 //$pdo->query($sql);
 $res=$pdo->exec($sql);
+$res=$pdo->exec($sql_class);
 echo"新增成功:".$res;
 
 ?>

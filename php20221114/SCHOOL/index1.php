@@ -44,8 +44,8 @@
         echo "<td>{$row['graduate_at']}</td>";
         echo "<td>$age</td>";
         echo "<td>";
-        echo "<a href='edit_student.php?id={$row['id']}' class='editbtn'> 編輯";
-        echo "<a href='delete_students.php?id={$row['id']}' class='delbtn'> 移除";
+        echo "<a href='edit.php?id={$row['id']}' class='editbtn'> 編輯";
+        echo "<a href='del.php?id={$row['id']}' class='delbtn'> 移除";
         echo "</td>";
 
         echo "</tr>";
