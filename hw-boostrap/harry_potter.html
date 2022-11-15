@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body style="height:1500px">
+  
+  <!-- 跑馬燈 -->
+  <div class="container-fluid mt-3">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+          aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+          aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="./image/marquee1.png" class="d-block w-100" alt="">
+        </div>
+        <div class="carousel-item">
+          <img src="..." class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="..." class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">電影介紹</a>
+      <a class="navbar-brand" href="#v-pills-character-tab">主要角色</a>
+      <a class="navbar-brand" href="#">關於魔法世界</a>
+      <a class="navbar-brand" href="#">製作團隊</a>
+    </div>
+  </nav>
+
+  <div class="container-fluid"><br>
+    <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
+    <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
+    <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
+    <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
+  </div>
+  <!-- 人物角色介紹 -->
+  <div class="d-flex align-items-start">
+    <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+      <button class="nav-link" id="v-pills-character-tab" data-bs-toggle="pill" data-bs-target="#v-pills-character"
+        type="button" role="tab" aria-controls="v-pills-character" aria-selected="false">主要人物介紹</button>
+      <button class="nav-link" id="v-pills-Harry-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Harry" type="button"
+        role="tab" aria-controls="v-pills-Harry" aria-selected="false">哈利波特<br>Harry James
+        Potter</button>
+      <button class="nav-link" id="v-pills-Ronald-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button"
+        role="tab" aria-controls="v-pills-Ronald" aria-selected="false">榮恩·衛斯理<br>Ronald Weasley</button>
+      <button class="nav-link" id="v-pills-Hermione-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Hermione"
+        type="button" role="tab" aria-controls="v-pills-Hermione" aria-selected="false">妙麗·格蘭傑<br>Hermione
+        Granger</button>
+      <button class="nav-link" id="v-pills-Neville-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Neville"
+        type="button" role="tab" aria-controls="v-pills-Neville" aria-selected="false">奈威·隆巴頓<br>Neville
+        Longbottom</button>
+       <button class="nav-link" id="v-pills-Luna-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Luna" type="button"
+        role="tab" aria-controls="v-pills-Luna" aria-selected="false">露娜·羅古德<br>Luna Lovegood</button>
+      <button class="nav-link" id="v-pills-Draco-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Draco" type="button"
+        role="tab" aria-controls="v-pills-Draco" aria-selected="false">跩哥·馬份<br>Draco Malfoy</button>
+      <button class="nav-link" id="v-pills-Albus-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Albus" type="button"
+        role="tab" aria-controls="v-pills-Albus" aria-selected="false">阿不思·鄧不利多<br>Albus
+        Dumbledore</button>
+      <button class="nav-link" id="v-pills-Minerva-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Minerva"
+        type="button" role="tab" aria-controls="v-pills-Minerva" aria-selected="false">米奈娃·麥<br>Minerva
+        McGonagall</button>
+      <button class="nav-link" id="v-pills-Snape-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Snape" type="button"
+        role="tab" aria-controls="v-pills-Snape" aria-selected="false">賽佛勒斯·石內卜<br>Severus
+        Snape</button>
+      <button class="nav-link" id="v-pills-Hagrid-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Hagrid" type="button"
+        role="tab" aria-controls="v-pills-Hagrid" aria-selected="false">魯霸·海格<br>Rubeus Hagrid</button>
+      <button class="nav-link" id="v-pills-Sirius-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Sirius" type="button"
+        role="tab" aria-controls="v-pills-Sirius" aria-selected="false">天狼星·布萊克<br>Sirius Black</button>
+      <button class="nav-link" id="v-pills-Remus-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Remus" type="button"
+        role="tab" aria-controls="v-pills-Remus" aria-selected="false">雷木思·路平<br>Remus John
+        Lupin</button>
+      <button class="nav-link" id="v-pills-Voldemort-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Voldemort"
+        type="button" role="tab" aria-controls="v-pills-Voldemort" aria-selected="false">佛地魔<br>Lord Voldemort</button>
+    </div>
+    <div class="tab-content" id="v-pills-tabContent">
+      <div class="tab-pane fade" id="v-pills-character" role="tabpanel" aria-labelledby="v-pills-character"
+      tabindex="0">character</div>
+      <div class="tab-pane fade" id="v-pills-Harry" role="tabpanel" aria-labelledby="v-pills-Harry"
+        tabindex="0">Harry</div>
+      <div class="tab-pane fade" id="v-pills-Ronald" role="tabpanel" aria-labelledby="v-pills-Ronald" tabindex="0">
+        Ronald
+      </div>
+      <div class="tab-pane fade" id="v-pills-Hermione" role="tabpanel" aria-labelledby="v-pills-Hermione" tabindex="0">
+        Hermione
+      </div>
+       <div class="tab-pane fade" id="v-pills-Neville" role="tabpanel" aria-labelledby="v-pills-Neville" tabindex="0">
+        Neville
+      </div>
+      <div class="tab-pane fade" id="v-pills-Luna" role="tabpanel" aria-labelledby="v-pills-Luna" tabindex="0">Luna
+      </div>
+      <div class="tab-pane fade" id="v-pills-Draco" role="tabpanel" aria-labelledby="v-pills-Draco" tabindex="0">Draco
+      </div>
+      <div class="tab-pane fade" id="v-pills-Albus" role="tabpanel" aria-labelledby="v-pills-Albus" tabindex="0">Albus
+      </div>
+      <div class="tab-pane fade" id="v-pills-Minerva" role="tabpanel" aria-labelledby="v-pills-Minerva" tabindex="0">
+        Minerva
+      </div>
+      <div class="tab-pane fade" id="v-pills-Snape" role="tabpanel" aria-labelledby="v-pills-Snape" tabindex="0">Snape
+      </div>
+      <div class="tab-pane fade" id="v-pills-Hagrid" role="tabpanel" aria-labelledby="v-pills-Hagrid" tabindex="0">
+        Hagrid
+      </div>
+      <div class="tab-pane fade" id="v-pills-Sirius" role="tabpanel" aria-labelledby="v-pills-Sirius" tabindex="0">Sirius
+      </div>
+      <div class="tab-pane fade" id="v-pills-Remus" role="tabpanel" aria-labelledby="v-pills-Remus" tabindex="0">MRemusO
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
