@@ -12,16 +12,19 @@
     <h1 id="myH1">test</h1>
     <h2 id="myH2">test</h2>
     <h3 id="myH3">test</h3>
+    <button type="button" id="myBtn">myBtn</button>
     <script>
         let url = location.href;
         console.log('url', url);
         document.getElementById('myH1').innerText = url;
         console.log('document', document);
 
-        let width=screen.width;
-        console.log('width',width);
-        document.getElementById('myH2').textContent=width;
-        document.getElementById('myH3').innerHTML='<strong>55456</strong>'
+        let width = screen.width;
+        console.log('width', width);
+        document.getElementById('myH2').textContent = width;
+        document.getElementById('myH3').innerHTML = '<strong>55456</strong>'
+        document.getElementById('myBtn').addEventListener('click', function () { console.log('myBtn ok'); location.assign('http://www.w3schools.com'); });
+
 
 
 
