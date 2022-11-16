@@ -9,8 +9,12 @@
   <link rel="stylesheet" href="./css/style.css">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
+<style>
+
+</style>
+
 <body style="height:1500px">
-  
+
   <!-- 跑馬燈 -->
   <div class="container-fluid mt-3">
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
@@ -64,73 +68,157 @@
   <!-- 人物角色介紹 -->
   <div class="d-flex align-items-start">
     <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-      <button class="nav-link" id="v-pills-character-tab" data-bs-toggle="pill" data-bs-target="#v-pills-character"
+      <button class="nav-link active" id="v-pills-character-tab" data-bs-toggle="pill" data-bs-target="#v-pills-character"
         type="button" role="tab" aria-controls="v-pills-character" aria-selected="false">主要人物介紹</button>
-      <button class="nav-link" id="v-pills-Harry-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Harry" type="button"
-        role="tab" aria-controls="v-pills-Harry" aria-selected="false">哈利波特<br>Harry James
+      <button class="nav-link" id="v-pills-Harry-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Harry"
+        type="button" role="tab" aria-controls="v-pills-Harry" aria-selected="false">哈利波特<br>Harry James
         Potter</button>
-      <button class="nav-link" id="v-pills-Ronald-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button"
-        role="tab" aria-controls="v-pills-Ronald" aria-selected="false">榮恩·衛斯理<br>Ronald Weasley</button>
+      <button class="nav-link" id="v-pills-Ronald-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Ronald"
+        type="button" role="tab" aria-controls="v-pills-Ronald" aria-selected="false">榮恩·衛斯理<br>Ronald Weasley</button>
       <button class="nav-link" id="v-pills-Hermione-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Hermione"
         type="button" role="tab" aria-controls="v-pills-Hermione" aria-selected="false">妙麗·格蘭傑<br>Hermione
         Granger</button>
       <button class="nav-link" id="v-pills-Neville-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Neville"
         type="button" role="tab" aria-controls="v-pills-Neville" aria-selected="false">奈威·隆巴頓<br>Neville
         Longbottom</button>
-       <button class="nav-link" id="v-pills-Luna-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Luna" type="button"
+      <button class="nav-link" id="v-pills-Luna-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Luna" type="button"
         role="tab" aria-controls="v-pills-Luna" aria-selected="false">露娜·羅古德<br>Luna Lovegood</button>
-      <button class="nav-link" id="v-pills-Draco-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Draco" type="button"
-        role="tab" aria-controls="v-pills-Draco" aria-selected="false">跩哥·馬份<br>Draco Malfoy</button>
-      <button class="nav-link" id="v-pills-Albus-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Albus" type="button"
-        role="tab" aria-controls="v-pills-Albus" aria-selected="false">阿不思·鄧不利多<br>Albus
+      <button class="nav-link" id="v-pills-Draco-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Draco"
+        type="button" role="tab" aria-controls="v-pills-Draco" aria-selected="false">跩哥·馬份<br>Draco Malfoy</button>
+      <button class="nav-link" id="v-pills-Albus-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Albus"
+        type="button" role="tab" aria-controls="v-pills-Albus" aria-selected="false">阿不思·鄧不利多<br>Albus
         Dumbledore</button>
       <button class="nav-link" id="v-pills-Minerva-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Minerva"
         type="button" role="tab" aria-controls="v-pills-Minerva" aria-selected="false">米奈娃·麥<br>Minerva
         McGonagall</button>
-      <button class="nav-link" id="v-pills-Snape-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Snape" type="button"
-        role="tab" aria-controls="v-pills-Snape" aria-selected="false">賽佛勒斯·石內卜<br>Severus
+      <button class="nav-link" id="v-pills-Snape-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Snape"
+        type="button" role="tab" aria-controls="v-pills-Snape" aria-selected="false">賽佛勒斯·石內卜<br>Severus
         Snape</button>
-      <button class="nav-link" id="v-pills-Hagrid-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Hagrid" type="button"
-        role="tab" aria-controls="v-pills-Hagrid" aria-selected="false">魯霸·海格<br>Rubeus Hagrid</button>
-      <button class="nav-link" id="v-pills-Sirius-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Sirius" type="button"
-        role="tab" aria-controls="v-pills-Sirius" aria-selected="false">天狼星·布萊克<br>Sirius Black</button>
-      <button class="nav-link" id="v-pills-Remus-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Remus" type="button"
-        role="tab" aria-controls="v-pills-Remus" aria-selected="false">雷木思·路平<br>Remus John
+      <button class="nav-link" id="v-pills-Hagrid-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Hagrid"
+        type="button" role="tab" aria-controls="v-pills-Hagrid" aria-selected="false">魯霸·海格<br>Rubeus Hagrid</button>
+      <button class="nav-link" id="v-pills-Sirius-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Sirius"
+        type="button" role="tab" aria-controls="v-pills-Sirius" aria-selected="false">天狼星·布萊克<br>Sirius Black</button>
+      <button class="nav-link" id="v-pills-Remus-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Remus"
+        type="button" role="tab" aria-controls="v-pills-Remus" aria-selected="false">雷木思·路平<br>Remus John
         Lupin</button>
       <button class="nav-link" id="v-pills-Voldemort-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Voldemort"
         type="button" role="tab" aria-controls="v-pills-Voldemort" aria-selected="false">佛地魔<br>Lord Voldemort</button>
     </div>
     <div class="tab-content" id="v-pills-tabContent">
-      <div class="tab-pane fade" id="v-pills-character" role="tabpanel" aria-labelledby="v-pills-character"
-      tabindex="0">character</div>
-      <div class="tab-pane fade" id="v-pills-Harry" role="tabpanel" aria-labelledby="v-pills-Harry"
-        tabindex="0">Harry</div>
+      <div class="tab-pane fade show active" id="v-pills-character" role="tabpanel" aria-labelledby="v-pills-character"
+        tabindex="0">
+        <div class="bg-image" style="
+        background-image: url('./image/role/1.jpg');
+        height: 880px;width: 1698px;
+      ">
+          <h1>character</h1>
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="v-pills-Harry" role="tabpanel" aria-labelledby="v-pills-Harry" tabindex="0">
+        <div class="bg-image" style="
+        background-image: url('./image/role/2.jpg');
+        height: 880px;width: 1698px;
+      ">
+          <h1>Harry</h1>
+        </div>
+      </div>
       <div class="tab-pane fade" id="v-pills-Ronald" role="tabpanel" aria-labelledby="v-pills-Ronald" tabindex="0">
-        Ronald
+        <div class="bg-image" style="
+        background-image: url('./image/role/3.jpg');
+        height: 880px;width: 1698px;
+      ">
+          <h1>Ronald</h1>
+        </div>
       </div>
       <div class="tab-pane fade" id="v-pills-Hermione" role="tabpanel" aria-labelledby="v-pills-Hermione" tabindex="0">
-        Hermione
+        <div class="bg-image" style="
+        background-image: url('./image/role/4.jpg');
+        height: 880px;width: 1698px;
+      ">
+          <h1>Hermione</h1>
+        </div>
       </div>
-       <div class="tab-pane fade" id="v-pills-Neville" role="tabpanel" aria-labelledby="v-pills-Neville" tabindex="0">
-        Neville
+      <div class="tab-pane fade" id="v-pills-Neville" role="tabpanel" aria-labelledby="v-pills-Neville" tabindex="0">
+        <div class="bg-image" style="
+        background-image: url('./image/role/5.jpg');
+        height: 880px;width: 1698px;
+      ">
+          <h1>Neville</h1>
+        </div>
       </div>
-      <div class="tab-pane fade" id="v-pills-Luna" role="tabpanel" aria-labelledby="v-pills-Luna" tabindex="0">Luna
+      <div class="tab-pane fade" id="v-pills-Luna" role="tabpanel" aria-labelledby="v-pills-Luna" tabindex="0">
+        <div class="bg-image" style="
+        background-image: url('./image/role/6.jpg');
+        height: 880px;width: 1698px;
+      ">
+          <h1>Luna</h1>
+        </div>
       </div>
-      <div class="tab-pane fade" id="v-pills-Draco" role="tabpanel" aria-labelledby="v-pills-Draco" tabindex="0">Draco
+      <div class="tab-pane fade" id="v-pills-Draco" role="tabpanel" aria-labelledby="v-pills-Draco" tabindex="0">
+        <div class="bg-image" style="
+        background-image: url('./image/role/7.jpg');
+        height: 880px;width: 1698px;
+      ">
+          <h1>Draco</h1>
+        </div>
       </div>
-      <div class="tab-pane fade" id="v-pills-Albus" role="tabpanel" aria-labelledby="v-pills-Albus" tabindex="0">Albus
+      <div class="tab-pane fade" id="v-pills-Albus" role="tabpanel" aria-labelledby="v-pills-Albus" tabindex="0">
+        <div class="bg-image" style="
+        background-image: url('./image/role/8.jpg');
+        height: 880px;width: 1698px;
+      ">
+          <h1>Albus</h1>
+        </div>
       </div>
       <div class="tab-pane fade" id="v-pills-Minerva" role="tabpanel" aria-labelledby="v-pills-Minerva" tabindex="0">
-        Minerva
+        <div class="bg-image" style="
+        background-image: url('./image/role/9.jpg');
+        height: 880px;width: 1698px;
+      ">
+          <h1>Minerva</h1>
+        </div>
       </div>
-      <div class="tab-pane fade" id="v-pills-Snape" role="tabpanel" aria-labelledby="v-pills-Snape" tabindex="0">Snape
+      <div class="tab-pane fade" id="v-pills-Snape" role="tabpanel" aria-labelledby="v-pills-Snape" tabindex="0">
+        <div class="bg-image" style="
+        background-image: url('./image/role/10.jpg');
+        height: 880px;width: 1698px;
+      ">
+          <h1>Snape</h1>
+        </div>
       </div>
       <div class="tab-pane fade" id="v-pills-Hagrid" role="tabpanel" aria-labelledby="v-pills-Hagrid" tabindex="0">
-        Hagrid
+        <div class="bg-image" style="
+        background-image: url('./image/role/11.jpg');
+        height: 880px;width: 1698px;
+      ">
+          <h1>Hagrid</h1>
+        </div>
       </div>
-      <div class="tab-pane fade" id="v-pills-Sirius" role="tabpanel" aria-labelledby="v-pills-Sirius" tabindex="0">Sirius
+      <div class="tab-pane fade" id="v-pills-Sirius" role="tabpanel" aria-labelledby="v-pills-Sirius" tabindex="0">
+        <div class="bg-image" style="
+        background-image: url('./image/role/12.jpg');
+        height: 880px;width: 1698px;
+      ">
+          <h1>Sirius</h1>
+        </div>
       </div>
-      <div class="tab-pane fade" id="v-pills-Remus" role="tabpanel" aria-labelledby="v-pills-Remus" tabindex="0">MRemusO
+      <div class="tab-pane fade" id="v-pills-Remus" role="tabpanel" aria-labelledby="v-pills-Remus" tabindex="0">
+        <div class="bg-image" style="
+        background-image: url('./image/role/13.jpg');
+        height: 880px;width: 1698px;
+      ">
+          <h1>Remus</h1>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="v-pills-Voldemort" role="tabpanel" aria-labelledby="v-pills-Voldemort"
+        tabindex="0">
+        <div class="bg-image" style="
+        background-image: url('./image/role/14.jpg');
+        height: 880px;width: 1698px;
+      ">
+          <h1>Voldemort</h1>
+        </div>
       </div>
     </div>
   </div>
