@@ -1,7 +1,12 @@
 * {
     box-sizing: border-box;
-    background-color: black;
 }
+
+body,.navbar {
+    background-color: black
+}
+
+.carousel-item{height: 850px;}
 
 .nav-link:not(.active) {
     background-color: black;
