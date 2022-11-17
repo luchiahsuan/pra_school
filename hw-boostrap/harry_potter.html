@@ -14,7 +14,43 @@
 </style>
 
 <body style="height:1500px">
+<!-- 導覽列 -->
+  <nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
+    <div class="container-fluid">
+      <!-- <a class="navbar-brand" href="#">Navbar scroll</a> -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarScroll">
+        <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">電影介紹</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#v-pills-character-tab">主要角色</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              關於魔法世界
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">魔法學校</a></li>
+              <li><a class="dropdown-item" href="#">魔法物品</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">生態族群</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">製作團隊</a>
+          </li>
 
+        </ul>
+      </div>
+    </div>
+  </nav>
   <!-- 跑馬燈 -->
   <div class="container-fluid mt-3">
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
@@ -49,16 +85,6 @@
       </button>
     </div>
   </div>
-
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">電影介紹</a>
-      <a class="navbar-brand" href="#v-pills-character-tab">主要角色</a>
-      <a class="navbar-brand" href="#">關於魔法世界</a>
-      <a class="navbar-brand" href="#">製作團隊</a>
-    </div>
-  </nav>
-
   <div class="container-fluid"><br>
     <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
     <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
@@ -67,6 +93,7 @@
   </div>
   <!-- 人物角色介紹 -->
   <div class="d-flex align-items-start">
+    <!-- 人物介紹按鈕 -->
     <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
       <button class="nav-link active" id="v-pills-character-tab" data-bs-toggle="pill" data-bs-target="#v-pills-character"
         type="button" role="tab" aria-controls="v-pills-character" aria-selected="false">主要人物介紹</button>
@@ -104,6 +131,7 @@
       <button class="nav-link" id="v-pills-Voldemort-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Voldemort"
         type="button" role="tab" aria-controls="v-pills-Voldemort" aria-selected="false">佛地魔<br>Lord Voldemort</button>
     </div>
+<!-- 人物介紹內容 -->
     <div class="tab-content" id="v-pills-tabContent">
       <div class="tab-pane fade show active" id="v-pills-character" role="tabpanel" aria-labelledby="v-pills-character"
         tabindex="0">
@@ -111,10 +139,9 @@
         background-image: url('./image/role/1.jpg');
         height: 880px;width: 1698px;
       ">
-          <h1>character</h1>
+          <!-- <h1>character</h1> -->
         </div>
       </div>
-
       <div class="tab-pane fade" id="v-pills-Harry" role="tabpanel" aria-labelledby="v-pills-Harry" tabindex="0">
         <div class="bg-image" style="
         background-image: url('./image/role/2.jpg');
