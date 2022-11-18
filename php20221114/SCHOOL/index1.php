@@ -25,6 +25,22 @@
     <a href="reg.php" class="button">教師註冊</a>
     <a href="login.php" class="button">教師登入</a>
     
+    <?php
+if(isset($_GET['status'])){
+    switch($_GET['status']){
+        case 'add_success':
+            echo "<span style='color:green'>新增學生成功</span>";
+        break;
+        case 'add_fail';
+            echo "<span style='color:red'>新增學生有誤</span>";
+        break;
+        case 'error';
+        echo "<span style='color:red'>無法編輯,請洽管理員,或正常操作</span>";
+    }
+}
+
+?>
+
     <table class="list-students">
     <tr>
     <td>學號</td>

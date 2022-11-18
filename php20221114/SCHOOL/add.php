@@ -46,7 +46,7 @@ $pdo = new PDO($dsn, 'root', '');
             </tr>
             <tr>
                 <td>parents</td>
-                <td><input type="text" name="partents"></td>
+                <td><input type="text" name="parents"></td>
             </tr>
             <tr>
                 <td>tel</td>
