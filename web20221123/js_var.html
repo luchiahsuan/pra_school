@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+//註解16行的狀況下,14行還沒收到15行的宣告,但處於可以區域變數的funtion內,所以14行數值undefined
+//註解16/17行的狀況下,14行吃到的是13行的值,所以數值為2
+
+        var varX = 2;
+        function cal() {
+            console.log('ex varX', varX);
+            // var varX = 5, varY = 1;
+            // console.log('varX+varY', varX + varY);
+        }
+        cal();
+        console.log('varX', varX);
+
+
+
+    </script>
+</body>
+</html>
