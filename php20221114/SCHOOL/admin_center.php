@@ -1,4 +1,7 @@
 <?php
+include"./db/base.php"
+?>
+<?php
 session_start();
 if(!isset($_SESSION['login'])){
     header("location:index.php");
@@ -16,9 +19,7 @@ if(!isset($_SESSION['login'])){
     <title>後台管理中心</title>
     <link rel="stylesheet" href="style.css">
     <?php
-//使用PDO方式建立資料庫連線物件
-$dsn="mysql:host=localhost;charset=utf8;dbname=school";
-$pdo=new PDO($dsn,'root','');
+
 
 if(isset($_GET['code'])){
     $sql="SELECT `students`.`id`,
@@ -65,6 +66,9 @@ $rows=$pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 ?>
 </head>
 <body>
+<?php
+    include"./layouts/header.php";
+    ?>
 <?php 
 if(isset($_GET['del'])){
     echo "<div class='del-msg'>";

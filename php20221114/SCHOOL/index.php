@@ -1,4 +1,6 @@
-
+<?php
+include"./db/base.php"
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,8 +11,6 @@
     <link rel="stylesheet" href="style.css">
     <?php
 //使用PDO方式建立資料庫連線物件
-$dsn="mysql:host=localhost;charset=utf8;dbname=school";
-$pdo=new PDO($dsn,'root','');
 
 if(isset($_GET['code'])){
     $sql="SELECT `students`.`id`,
@@ -57,6 +57,10 @@ $rows=$pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 ?>
 </head>
 <body>
+<?php
+ 
+    include"./layouts/header.php";
+    ?>
 <!-- <pre>
    <?php //print_r($rows);?> ;
 </pre> -->
