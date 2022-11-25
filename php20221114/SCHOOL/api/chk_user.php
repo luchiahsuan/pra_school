@@ -1,6 +1,5 @@
 <?php
-include"./db/base.php";
-
+include "./db/base.php";
 
 session_start();
 
@@ -16,7 +15,6 @@ if($chk==1){
 
     $_SESSION['login']=$user;
     header("location:../admin_center.php");
-
 }else{
     if(isset($_SESSION['login_try'])){
         $_SESSION['login_try']++;
