@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,15 +17,13 @@
             echo "登入嘗試" . $_SESSION['login_try'] . "次";
         }
 
-
         ?>
     </div>
 
     <form action="./api/chk_user.php" method="post">
-        <div>帳號：<input type="text" name="axx"></div>
+        <div>帳號：<input type="text" name="acc"></div>
         <div>密碼：<input type="password" name="pw"></div>
         <div><input type="submit" value="登入"></div>
     </form>
 </body>
-
 </html>
