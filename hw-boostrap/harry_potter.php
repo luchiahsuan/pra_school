@@ -41,6 +41,12 @@
   include "./role.html"
   ?>
 
+<hr>
+  <h1 class="tittle" id="magic_biology"><br>- 物種介紹 -<br></h1>
+  <?php
+  include "./magic_biology.html"
+  ?>
+
 </body>
 
 </html>
