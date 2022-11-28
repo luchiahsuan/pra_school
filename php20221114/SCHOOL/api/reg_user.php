@@ -1,6 +1,5 @@
 <?php
-include"./db/base.php";
-
+include "../db/base.php";
 
 $acc=trim(strip_tags($_POST['acc']));
 $pw=trim($_POST['pw']);
@@ -18,5 +17,7 @@ echo "<br>";
 echo "email=>".$email;
 echo "<br>";
 $pdo->exec($sql);
-header("location:../login.php");
+
+//註冊完成後，將使用者導向登入頁
+header("location:../index.php?do=login");
 
