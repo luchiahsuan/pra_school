@@ -30,15 +30,15 @@ body,
     color: rgb(255, 255, 255);
 }
 
-.nav-link {
+/* .nav-link {
     background-color: white;
     color: black;
-}
+} */
 
-#v-pills-tabContent {
+/* #v-pills-tabContent {
     background-color: white;
     color: black;
-}
+} */
 
 /* .tab-content>.tab-pane>url {
     height: 880px;
@@ -220,7 +220,7 @@ body,
 
 /* 電影介紹海報結束 */
 
-#magic_biology>col-sm-2 {
+#magic-biology-row {
     height: 300px;
 border: 1px solid black;
 }
