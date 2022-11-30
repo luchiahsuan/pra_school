@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container mt-3">
+        <h2>Inline Forms</h2>
+        <p>If you want your form elements to appear side by side, use .row and .col:</p>
+        <form>
+            <div class="row">
+                <div class="col">
+                    <input type="number" class="form-control" placeholder="num1" name="num1" id="num1">
+                </div>
+                <div class="col">
+                    <input type="number" class="form-control" placeholder="num2" name="num2" id="num2">
+                </div>
+                <!-- <div class="col">
+                    <input type="text" class="form-control" placeholder="option" name="opt" id="opt">
+                </div> -->
+                <div class="col">
+                    <select class="form-select" id="mySelect" name="mySelect"></div>
+                    <option >+</option>
+                    <option >-</option>
+                    <option >*</option>
+                    <option >/</option>
+
+                </select>
+            </div>
+            <div class="row mt-3">
+                <div class="col">
+                    <div class="d-grid">
+                        <button type="button" class="btn btn-primary btn-block" id="myBtn"
+                            onclick="calFun();">full-width
+                            button </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <hr>
+    <div class="containter mt-3">
+        <p id="resultP">result</p>
+    </div>
+    <script>
+
+        function calFun() {
+            console.log('calFun ok')
+
+            let num1Vaule = Number(num1Input.value);
+            let optVaule = optInput.value;
+            let num2Vaule = Number(num2Input.value);
+            let resultCal = 0;
+            let resultStr = '';
+
+            switch (optVaule) {
+                case '+':
+                    resultCal = num1Vaule + num2Vaule;
+                    break;
+                case '-':
+                    resultCal = num1Vaule - num2Vaule;
+                    break;
+                case '*':
+                    resultCal = num1Vaule * num2Vaule;
+                    break;
+                case '/':
+                    resultCal = num1Vaule / num2Vaule;
+                    break;
+
+                default:
+                    resultCal = 'error';
+                    optVaule = 'error';
+                    break;
+
+            }
+
+
+            resultStr = `${num1Vaule} ${optVaule} ${num2Vaule} =${resultCal}`;
+
+            resultPInput.textContent = resultStr;
+        }
+        const num1Input = document.getElementById('num1');
+        const num2Input = document.getElementById('num2');
+        const optInput = document.getElementById('mySelect');
+        const myBtnInput = document.getElementById('myBtn');
+        const resultPInput = document.getElementById('resultP');
+
+        console.log('num1Input', num1Input);
+        console.log('optInput', optInput);
+        console.log('num2Input', num2Input);
+        console.log('myBtnInput', myBtnInput);
+        console.log('resultPInput', resultPInput);
+
+
+
+    </script>
+</body>
+
+</html>
