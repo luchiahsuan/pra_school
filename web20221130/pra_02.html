@@ -9,9 +9,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <style>
-    *{
+    * {
         text-align: center;
     }
+
     td>img {
         width: 100px;
         height: 100px;
@@ -39,13 +40,15 @@
                         <img src="./menu_image/1.png">
                     </td>
                     <td>
-                        <input class="form-control" type="number" name="item1Price" id="item1Price" value="100"></div>
+                        <input class="form-control" type="number" name="item1Price" id="item1Price" value="100">
                     </td>
                     <td>
-                        <input class="form-control" type="number" name="item1Count" id="item1Count" value="1" onchange="changeFun();"></div>
+                        <input class="form-control" type="number" name="item1Count" id="item1Count" value="1"
+                            onchange="changeFun();">
+                        <!-- 讓數量在跑時總價會跟著變動 -->
                     </td>
                     <td>
-                        <input class="form-control" type="number" name="item1Total" id="item1Total" value="0"></div>
+                        <input class="form-control" type="number" name="item1Total" id="item1Total" value="0">
                     </td>
                 </tr>
                 <tr>
@@ -55,13 +58,14 @@
 
                     </td>
                     <td>
-                        <input class="form-control" type="number" name="item2Price" id="item2Price" value="90"></div>
+                        <input class="form-control" type="number" name="item2Price" id="item2Price" value="90">
                     </td>
                     <td>
-                        <input class="form-control" type="number" name="item2Count" id="item2Count" value="1" onchange="changeFun();"></div>
+                        <input class="form-control" type="number" name="item2Count" id="item2Count" value="1"
+                            onchange="changeFun();">
                     </td>
                     <td>
-                        <input class="form-control" type="number" name="item2Total" id="item2Total" value="0"></div>
+                        <input class="form-control" type="number" name="item2Total" id="item2Total" value="0">
                     </td>
                 </tr>
                 <tr>
@@ -70,13 +74,14 @@
                         <img src="./menu_image/3.jpg">
                     </td>
                     <td>
-                        <input class="form-control" type="number" name="item3Price" id="item3Price" value="80"></div>
+                        <input class="form-control" type="number" name="item3Price" id="item3Price" value="80">
                     </td>
                     <td>
-                        <input class="form-control" type="number" name="item3Count" id="item3Count" value="1" onchange="changeFun();"></div>
+                        <input class="form-control" type="number" name="item3Count" id="item3Count" value="1"
+                            onchange="changeFun();">
                     </td>
                     <td>
-                        <input class="form-control" type="number" name="item3Total" id="item3Total" value="0"></div>
+                        <input class="form-control" type="number" name="item3Total" id="item3Total" value="0">
                     </td>
                 </tr>
                 <tr>
@@ -85,75 +90,95 @@
                         <img src="./menu_image/4.jpg">
                     </td>
                     <td>
-                        <input class="form-control" type="number" name="item4Price" id="item4Price" value="85"></div>
+                        <input class="form-control" type="number" name="item4Price" id="item4Price" value="85">
                     </td>
                     <td>
-                        <input class="form-control" type="number" name="item4Count" id="item4Count" value="1" onchange="changeFun();"></div>
+                        <input class="form-control" type="number" name="item4Count" id="item4Count" value="1"
+                            onchange="changeFun();">
                     </td>
                     <td>
-                        <input class="form-control" type="number" name="item4Total" id="item4Total" value="0"></div>
+                        <input class="form-control" type="number" name="item4Total" id="item4Total" value="0">
                     </td>
                 </tr>
             </tbody>
+            <tfoot>
+                <tr>
+                    <td>Result</td>
+                    <td colspan="2" class="align-middle">
+                        <span id="results"></span>
+                    </td>
+                    <td>
+                        <!-- 設定按下按鈕即跑出各項總價格與加總後的總金額公式 -->
+                        <button type="button" class="btn btn-success" onclick="sum();">總金額</button>
+                    </td>
+                </tr>
+            </tfoot>
         </table>
     </div>
-<script>
+    <script>
+        function sum() {
+            //抓出各品項的總價格
+            let item1TotalValue = Number(item1Total.value);
+            let item2TotalValue = Number(item2Total.value);
+            let item3TotalValue = Number(item3Total.value);
+            let item4TotalValue = Number(item4Total.value);
+            //讓系統抓出單項總價後設定總金額等於單價總價加成
+            let sum = item1TotalValue + item2TotalValue + item3TotalValue + item4TotalValue;
+            //出現加總公式與結果
 
-function changeFun(){
-    console.log('changeFun ok');
-let item1PriceValue = Number(item1Price.value);
-let item1CountValue = Number(item1Count.value);
-let item1TotalValue = item1PriceValue * item1CountValue;
-item1Total.value = item1TotalValue;
+            if (sum >= 500) {
+                let str = `${item1TotalValue} + ${item2TotalValue} + ${item3TotalValue} + ${item4TotalValue} = ${sum}`;
+            }
+            else { let str = `${item1TotalValue} + ${item2TotalValue} + ${item3TotalValue} + ${item4TotalValue} = ${sum}`; }
+            results.textContent = str;
+        }
 
-let item2PriceValue = Number(item2Price.value);
-let item2CountValue = Number(item2Count.value);
-let item2TotalValue = item2PriceValue * item2CountValue;
-item1Total.value = item2TotalValue;
+        function changeFun() {
+            console.log('changeFun ok');
+            //讓系統抓出預設單價與數量與設定總金額公式
+            let item1PriceValue = Number(item1Price.value);
+            let item1CountValue = Number(item1Count.value);
+            let item1TotalValue = item1PriceValue * item1CountValue;
+            item1Total.value = item1TotalValue;
 
-let item3PriceValue = Number(item3Price.value);
-let item3CountValue = Number(item3Count.value);
-let item3TotalValue = item3PriceValue * item3CountValue;
-item1Total.value = item3TotalValue;
+            let item2PriceValue = Number(item2Price.value);
+            let item2CountValue = Number(item2Count.value);
+            let item2TotalValue = item2PriceValue * item2CountValue;
+            item2Total.value = item2TotalValue;
 
-let item4PriceValue = Number(item4Price.value);
-let item4CountValue = Number(item4Count.value);
-let item4TotalValue = item4PriceValue * item4CountValue;
-item1Total.value = item4TotalValue;
-}
-const item1Price = document.getElementById('item1Price');
+            let item3PriceValue = Number(item3Price.value);
+            let item3CountValue = Number(item3Count.value);
+            let item3TotalValue = item3PriceValue * item3CountValue;
+            item3Total.value = item3TotalValue;
+
+            let item4PriceValue = Number(item4Price.value);
+            let item4CountValue = Number(item4Count.value);
+            let item4TotalValue = item4PriceValue * item4CountValue;
+            item4Total.value = item4TotalValue;
+        }
+        //綁定各參數由來
+        const item1Price = document.getElementById('item1Price');
         const item1Count = document.getElementById('item1Count');
         const item1Total = document.getElementById('item1Total');
 
-const item2Price = document.getElementById('item2Price');
-const item2Count = document.getElementById('item2Count');
-const item2Total = document.getElementById('item2Total');
+        const item2Price = document.getElementById('item2Price');
+        const item2Count = document.getElementById('item2Count');
+        const item2Total = document.getElementById('item2Total');
 
-const item3Price = document.getElementById('item3Price');
-const item3Count = document.getElementById('item3Count');
-const item3Total = document.getElementById('item3Total');
+        const item3Price = document.getElementById('item3Price');
+        const item3Count = document.getElementById('item3Count');
+        const item3Total = document.getElementById('item3Total');
 
-const item4Price = document.getElementById('item4Price');
-const item4Count = document.getElementById('item4Count');
-const item4Total = document.getElementById('item4Total');
+        const item4Price = document.getElementById('item4Price');
+        const item4Count = document.getElementById('item4Count');
+        const item4Total = document.getElementById('item4Total');
 
-console.log('item1Price','item1Price');
-console.log('item1Count','item1Count');
-console.log('item1Total','item1Total');
-console.log('item2Price','item2Price');
-console.log('item2Count','item2Count');
-console.log('item2Total','item2Total');
-console.log('item3Price','item3Price');
-console.log('item3Count','item3Count');
-console.log('item3Total','item3Total');
-console.log('item4Price','item4Price');
-console.log('item4Count','item4Count');
-console.log('item4Total','item4Total');
-
-changeFun();
+        const results = document.getElementById('results');
+        //一開始執行一次
+        changeFun();
 
 
-</script>
+    </script>
 </body>
 
 </html>
