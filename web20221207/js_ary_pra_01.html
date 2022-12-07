@@ -50,6 +50,44 @@
         })
         console.log('arr', arr);
         console.log('bonusarr3', bonusarr3);
+
+        arr = [3, 4, 5, 6, 7];
+
+        let bonusarr4 = [];
+        arr.forEach((value, key) => {
+            let moneyarr = value * 2;
+            bonusarr4.push(moneyarr);
+        })
+        console.log('bonusarr4', bonusarr4);
+
+
+
+        let moneyarr2 = 0
+        bonusarr4.forEach((value, key) => {
+            moneyarr2 += value;
+        })
+        console.log('moneyarr2', moneyarr2);
+
+        let filterarr = [];
+        bonusarr4.forEach((value, key) => {
+            if (value > 10) {
+                filterarr.push(value);
+            }
+        })
+        console.log('filterarr', filterarr);
+
+        
+        let studentArr = ['amy','boc','cat'];
+        //find cat
+        // let getKey = studentArr.indexOf('cat');
+        // console.log('getKey',getKey);
+
+        let getKey = studentArr.indexOf('dog');
+        console.log('getKey',getKey);
+
+
+
+
     </script>
 </body>
 
