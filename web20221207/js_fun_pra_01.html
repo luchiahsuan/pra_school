@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <button type="button" id="myBtn">myBtn</button>
+    <button type="button" id="myBtn2">myBtn2</button>
+    <button type="button" id="myBtn3">myBtn3</button>
+    <script>
+myBtn.addEventListener("click",myFunction);
+
+function myFunction(){
+    document.getElementById("demo").innerHTML="Hello World";
+}
+
+myBtn2.addEventListener("clic",function(){
+    document.getElementById("demo").innerHTML="bibi";
+})
+
+myBtn3.addEventListener("click",() => {
+    document.getElementById("demo").innerHTML="Meow Meow";
+})
+
+//myFun代表整個function
+//myFun()代表呼叫function
+
+
+    </script>
+</body>
+</html>

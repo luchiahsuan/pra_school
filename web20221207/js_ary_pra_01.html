@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //map紅白課本5-15頁 陣列裡的單項運算
+        //公司發年終 每人發兩個月
+        let arr = [3, 4, 5, 6, 7];
+        let bonusarr = arr.map((value, key) => {
+            return value * 2;
+        });
+        console.log(bonusarr);
+        //單人獎金為bonusarr6/8/10/12/14
+
+        //公司發年終 每人發兩個月 如果是五萬的四個月
+        let arr2 = [3, 4, 5, 6, 7];
+        let bonusarr2 = arr.map((value, key) => {
+            if (value == 5) {
+                return value * 4
+            } else {
+
+                return value * 2;
+            }
+        });
+        console.log(bonusarr2);
+        //單人獎金為bonusarr6/8/5*4/12/14
+
+        //reduce紅白課本5-16頁 整合整個陣列的連續運算
+        let i = 0;
+        let sum = arr.reduce((total, value) => {
+            i++;
+            console.log('i', i);
+            // console.log('total', total);
+            console.log('value', value);
+            return total + value;
+        })
+        console.log('sum', sum);
+
+
+        //filter 過濾陣列中的元素 過濾完回傳新的陣列
+        let bonusarr3 = arr.filter((value) => {
+            return value < 5;
+        })
+        console.log('arr', arr);
+        console.log('bonusarr3', bonusarr3);
+    </script>
+</body>
+
+</html>
