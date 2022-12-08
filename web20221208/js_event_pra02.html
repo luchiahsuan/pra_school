@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>js class foreach</h3>
+    <button class="myBtn">myBtn1</button>
+    <button class="myBtn">myBtn2</button>
+    <button class="myBtn">myBtn3</button>
+    <button class="myBtn">myBtn4</button>
+    <button class="myBtn">myBtn5</button>
+
+    <script>
+        const myBtn = document.getElementsByClassName('myBtn');
+        console.log('myBtn', myBtn);
+        console.log('myBtn typeof', typeof (myBtn));
+        console.log('myBtn Array.isArray()', Array.isArray(myBtn));
+//for使用
+for(let i =0;i<myBtn.length;i++){
+    console.log(`myBtn${i}`,myBtn[i]);
+}
+
+
+        //foreach使用
+        // Array.from(myBtn).forEach((value,key) => {
+        //     console.log(value);
+        //     console.log('this', this);
+        //     if(key<3){
+
+        //         value.style.color = 'red';
+        //     }
+        //     value.addEventListener('click',function(){
+        //         this.style.color='blue';
+        //         console.log('key',key);
+        //     });
+        // });
+
+    </script>
+</body>
+
+</html>

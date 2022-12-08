@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>event</h3>
+
+    <p id="myP"></p>
+    <button id="mtBtn" onclick="clickFun();">myBtn</button>
+
+    <script>
+        function clickFun() {
+            console.log('clickFun OK');
+        }
+
+
+        const myP = document.getElementById('myP');
+        myP.textContent = 'click event ok';
+
+    </script>
+</body>
+
+</html>
