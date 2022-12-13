@@ -42,7 +42,7 @@
   ?>
 
 <hr>
-  <h1 class="tittle" id="magic_biology"><br>- 物種介紹 -<br></h1>
+  <h1 class="tittle" id="magic_biology"><br>- 生物與群族介紹 -<br></h1>
   <?php
   include "./magic_biology.html"
   ?>

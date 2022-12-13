@@ -220,7 +220,95 @@ body,
 
 /* 電影介紹海報結束 */
 
+/* 生物種族開始 */
 #magic-biology-row {
-    height: 300px;
-border: 1px solid black;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
 }
+.mbrow-1{
+    margin-bottom: 50px;
+}
+
+.mbrow-1 > div > img {
+width:  100%;
+}
+.mbrow-2 > div {
+    text-align: left;
+    text-align: justify;
+    padding: 1.5vh;
+    }
+
+    .mbrow-2 > div>h4 {
+        text-align: center;
+
+        }
+
+.mbrow-1,
+.mbrow-2 {
+    justify-content: space-evenly;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+}
+
+.mbrow1,
+.mbrow2,
+.mbrow3,
+.mbrow4,
+.mbrow5,
+.mbrow6 {
+    /* border: 1px solid rgb(255, 255, 255); */
+    width: 15%;
+    background-color: rgb(225, 225, 225);
+}
+
+@media only screen and (max-width: 1200px) {
+
+    .mbrow-1,
+    .mbrow-2 {
+
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+
+    }
+
+    .mbrow1,
+    .mbrow2,
+    .mbrow3,
+    .mbrow4,
+    .mbrow5,
+    .mbrow6 {
+        width: 30%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+
+    #magic-biology-row{
+        display: flex;
+        flex-direction: row;
+    
+    }
+    .mbrow-1,
+    .mbrow-2 {
+    flex-direction: column;
+    width: 45%;
+    }
+
+    .mbrow1,
+    .mbrow2,
+    .mbrow3,
+    .mbrow4,
+    .mbrow5,
+    .mbrow6 {
+        width: 100%;
+    }
+}
+
+
+
+
+/* 生物種族結束 */
