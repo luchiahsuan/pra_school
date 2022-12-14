@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js"
+        integrity="sha512-tWHlutFnuG0C6nQRlpvrEhE4QpkG1nn2MOUMWmUeRePl4e3Aki0VB6W1v3oLjFtd0hVOtRQ9PHpSfN6u6/QXkQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        .box1 {
+            width: 800px;
+            height: 50px;
+            background-color: rgb(255, 232, 99);
+        }
+
+        .box2 {
+            width: 800px;
+            height: 200px;
+            background-color: rgb(39, 132, 213);
+            color: aliceblue;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>elect change animate</h3>
+    <select name="" id="">
+        <!-- 設定case的value與下拉選項 -->
+        <option value="1">Hide</option>
+        <option value="2">Fade</option>
+        <option value="3">Slide</option>
+    </select>
+    <hr>
+    <div class="box1"></div>
+    <div class="box2">
+        Meow Meow
+    </div>
+    <script>
+
+        $(function () {
+            //在box2執行效果
+            const box2 = $('.box2');
+            //點box1會執行case的效果
+            $('.box1').click(function () {
+                console.log('box1 ok');
+                //抓取option設定的value並轉換成數字型態
+                let getSelectVal = Number($('select').val());
+                console.log('getSelectVal', getSelectVal);
+                console.log('getSelectVal typeof', typeof (getSelectVal));
+                switch (getSelectVal) {
+                    case 1:
+                        //一秒轉換
+                        box2.toggle(1000);
+                        //轉換時也換內容
+                        box2.text('hello hide');
+                        break;
+                    case 2:
+                        //兩秒轉換
+                        box2.fadeToggle(2000);
+                        box2.text('hello fade');
+                        break;
+                    case 3:
+                        box2.slideToggle(1000);
+                        box2.text('hello slide');
+                        break;
+
+                    default:
+                        break;
+                }
+
+            });
+
+        });
+    </script>
+</body>
+
+</html>
