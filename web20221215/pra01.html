@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js"
+        integrity="sha512-tWHlutFnuG0C6nQRlpvrEhE4QpkG1nn2MOUMWmUeRePl4e3Aki0VB6W1v3oLjFtd0hVOtRQ9PHpSfN6u6/QXkQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        .box{
+            display: flex;
+            justify-content: space-evenly;
+            flex-direction: row;
+            margin: 0 auto;
+            width: 80%;
+        }
+        .box1 {
+            height: 500px;
+            width: 80%;
+            background-color: rgb(207, 87, 87);
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        p{
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <button type="button" id="btn1">page1</button>
+        <button type="button" id="btn2">page2</button>
+        <button type="button" id="btn3">page3</button>
+        <button type="button" id="btn4">page4</button>
+    </div>
+
+    <div class="box1">
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <p>4</p>
+    </div>
+
+
+    <script>
+        $(function () {
+            const btn1 = $('#btn1');
+            const btn2 = $('#btn2');
+            const btn3 = $('#btn3');
+            const btn4 = $('#btn4');
+            const box1 = $('.box1');
+            const allp = $('.box1>p');
+            console.log('allp', allp);
+
+            btn1.click(function () {
+                allp.hide();
+                allp.eq(0).show();
+            });
+            btn2.click(function () {
+                allp.hide();
+                allp.eq(1).show();
+            });
+            btn3.click(function () {
+                allp.hide();
+                allp.eq(2).show();
+            });
+            btn4.click(function () {
+                allp.hide();
+                allp.eq(3).show();
+            });
+        })
+
+
+
+    </script>
+
+</body>
+
+</html>
