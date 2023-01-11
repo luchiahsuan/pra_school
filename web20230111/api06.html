@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>datatable</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css">
+</head>
+
+<body>
+
+   
+    <table class="table" id="table">
+          <tr>
+            <th scope="col">id</th>
+            <th scope="col">位置</th>
+            <th scope="col">名稱</th>
+            <th scope="col">特色</th>
+            <th scope="col">地址</th>
+            <th scope="col">電話</th>
+          </tr>
+
+      </table>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js"
+        integrity="sha512-tWHlutFnuG0C6nQRlpvrEhE4QpkG1nn2MOUMWmUeRePl4e3Aki0VB6W1v3oLjFtd0hVOtRQ9PHpSfN6u6/QXkQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        $(function () {
+
+            const myBtn = $('#myBtn');
+            const table = $('#table');
+           
+            $.ajax({
+                url: "TCMSV_alldesc.json",
+                type: "get",
+                dataType: 'json',
+                success: function (res) {
+                    let data = res.data.park;
+                    console.log('res', res);
+                    console.log('data', data);
+                    let textContent = "";
+                    
+                    $.each(data, function (key, value) {
+                        console.log('data[0].name', data[0].name);
+                        console.log('data[0].area', data[0].area);
+                        console.log('data[0].summary', data[0].summary);
+                        console.log('data[0].address', data[0].address);
+                        console.log('data[0].tel', data[0].tel);
+                        textContent += `
+                        <tr>
+                            <td scope="row">${value.id}</td>
+                            <td scope="row">${value.area}</td>
+                            <td scope="row">${value.name}</td>
+                            <td scope="row">${value.summary}</td>
+                            <td scope="row">${value.address}</td>
+                            <td scope="row">${value.tel}</td>
+                        </tr>
+                        `;
+                    });
+                    table.append(textContent);
+
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+            
+                }
+            });
+        });
+
+    </script>
+</body>
+
+</html>
