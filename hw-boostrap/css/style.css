@@ -292,6 +292,8 @@ body,
     .mbrow5,
     .mbrow6 {
         width: 30%;
+        margin-bottom: 10px;
+
     }
 }
 
@@ -303,23 +305,24 @@ body,
 
 
     #magic-biology-row-2 {
+        justify-content: space-around;
         display: flex;
     }
 
     .mbrow {
         flex-direction: column;
-        text-align: center;
         width: 90%;
-        justify-content: center;
     }
 
     .mbrow>div>div>img {
-        width: 90%;
+        width: 100%;
     }
 
     .mbrow>div {
         margin-bottom: 10px;
         width: 90%;
+        text-align: center;
+        margin: 0 auto;
 
     }
 
