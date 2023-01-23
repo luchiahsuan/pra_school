@@ -1,0 +1,140 @@
+<style>
+    .characters {
+        margin: 0 auto;
+    }
+
+    .tab {
+        padding: 3px;
+        border: 1px solid gray;
+        margin-left: -1px;
+        cursor: pointer;
+        background-color: #eee;
+        width: 18%;
+        text-align: center;
+    }
+
+    .active {
+        background-color: white;
+        border-bottom: white;
+    }
+
+    .charactersname {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        flex-direction: row;
+    }
+
+    .charactersthing {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        background-color: white;
+        padding: 20px;
+        align-items: center;
+    }
+</style>
+<div class="characters">
+    <div class="charactersname">
+        <!-- <div class='tab' style="width: 20%;">演員介紹</div> -->
+        <!-- <div class="charactersthing">123456</div> -->
+    </div>
+
+    <!-- <div class="charactersthing" style="margin-left: -1px;"> -->
+    <!-- <img src="../hw-boostrap/image/movie/3-2.jpg" alt=""> -->
+    <!-- </div> -->
+</div>
+
+
+<!-- <br><img src="${value.image}" alt=""  style=" width: 100px;"> -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js"
+    integrity="sha512-tWHlutFnuG0C6nQRlpvrEhE4QpkG1nn2MOUMWmUeRePl4e3Aki0VB6W1v3oLjFtd0hVOtRQ9PHpSfN6u6/QXkQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+    $("charactersthing").hide();
+
+    $(function () {
+
+
+        const charactersname = $('.charactersname');
+        const characters = $('.characters');
+        const charactersthing = $('.charactersthing');
+        const tab = $('.tab');
+
+        $.ajax({
+            url: "./all_characters.js",
+            type: "get",
+            dataType: 'json',
+            success: function (res) {
+                let data = res;
+                console.log('res', res);
+                let textContent = "";
+                let characters_name = "";
+
+                $.each(data, function (key, value) {
+                    characters_name += `
+                            <div class='tab'">${value.name}</div>
+                         
+
+                    `;
+                    textContent += `
+                    <div class="charactersthing">
+                    <div><img src="${value.image}" alt="" style=" width: 100px;"></div>
+                        <div>
+                            <table>
+                                <tr>
+                                    <td>演員姓名：</td>
+                                    <td>${value.actor}</td>
+                                </tr>
+                                <tr>
+                                    <td>飾演角色：</td>
+                                    <td>${value.name}</td>
+                                </tr>
+                                <tr>
+                                    <td>角色生日：</td>
+                                    <td>${value.dateOfBirth}</td>
+                                </tr>
+                                <tr>
+                                    <td>學院：</td>
+                                    <td>${value.house}</td>
+                                </tr>
+                                <tr>
+                                    <td>守護神：</td>
+                                    <td>${value.patronus}</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                        `;
+                });
+                charactersname.append(characters_name);
+                characters.append(textContent);
+
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+
+            }
+        });
+    });
+
+</script>
+
+<script>
+    $("charactersthing").hide();
+    // $("charactersname").click(function () {
+    //     $("charactersthing").toggle();
+    // });
+
+
+    // $(".characters").hide();
+    // $(".characters").eq(0).show();
+
+    $(".charactersname").on("click", (e) => {
+        $(".charactersname").removeClass('active');
+        $(e.target).addClass('active')
+        $(".charactersthing").hide();
+        $(".charactersthing").eq($(e.target).index()).show()
+    })
+</script>

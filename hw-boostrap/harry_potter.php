@@ -19,7 +19,7 @@
   include "./nav.html"
   ?>
   <!-- 跑馬燈 -->
-  <?php
+  <!-- <?php
   include "./carousel.html"
   ?>
   <div class="container-fluid"><br>
@@ -27,7 +27,7 @@
     <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
     <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
     <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  </div>
+  </div> -->
   <!-- 電影海報 -->
   <hr>
   <h1 class="tittle" id="movie-poster"><br>- 電影海報 -<br></h1>
