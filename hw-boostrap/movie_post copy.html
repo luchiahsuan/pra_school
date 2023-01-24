@@ -1,0 +1,98 @@
+<style>
+  li {
+    list-style-type: none;
+  }
+</style>
+
+<div class="accordion">
+  <ul>
+    <li>
+      <!-- <div>
+        <a href="#" class="sliderLink movie">
+          <h2>《哈利波特－神秘的魔法石》</h2>
+          <p>Harry Potter and the Sorcerer's Stone<br>美國上映時間 2001年11月16日
+          </p>
+        </a>
+      </div> -->
+    </li>
+  </ul>
+  <div class="boxstory">
+
+  </div>
+</div>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js"
+  integrity="sha512-tWHlutFnuG0C6nQRlpvrEhE4QpkG1nn2MOUMWmUeRePl4e3Aki0VB6W1v3oLjFtd0hVOtRQ9PHpSfN6u6/QXkQ=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+  $(function () {
+
+
+    const li = $('li');
+    const boxstory = $('.boxstory');
+
+    $.ajax({
+      url: "./json/movie.js",
+      type: "get",
+      dataType: 'json',
+      success: function (res) {
+        let data = res;
+        console.log('data', data);
+        let moviedetail = "";
+        let moviestory = "";
+
+        $.each(res, function (key, value) {
+          moviedetail += `
+            <div>
+              <a href="#" class="sliderLink movie movie${key}">
+                <h2>${value.book}</h2>
+                <p>
+                  ${value.original_title}<br>美國上映時間 ${value.release_date}
+                </p>
+              </a>
+            </div>
+                  
+            `;
+          moviestory += `
+          <div class="box box${key}">
+            <p>${value.description}</p>
+          </div>
+
+            `;
+
+        });
+        li.append(moviedetail);
+        boxstory.append(moviestory);
+
+      },
+      error: function (jqXHR, textStatus, errorThrown) {
+
+      }
+    });
+  });
+
+
+  $(function () {
+    const box = $('.box');
+    const sliderLink = $('.sliderLink');
+    const movie = $('.movie');
+    const movie1 = $('.movie1');
+    const movie2 = $('.movie2');
+    const moviestory = $('.moviestory');
+    
+
+    $('.box').hide();
+    $(".movie").on("click",(e)=>{
+    // $(".movie").removeClass('active');
+    // $(e.target).addClass('active')
+    $(".box").hide();
+    $(".box").eq($(e.target).index()).show()
+})
+
+    });
+
+
+</script>
