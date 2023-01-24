@@ -38,7 +38,7 @@
   <hr id="character">
   <h1 class="tittle"><br>- 人物角色介紹 -<br></h1>
   <?php
-  include "./role.html"
+  include "./all_characters.html"
   ?>
 
 <hr>

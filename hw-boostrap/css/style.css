@@ -20,31 +20,7 @@ body,
 }
 
 /* 人物角色介紹按鈕 */
-.nav-link:not(.active) {
-    background-color: black;
-    color: rgb(179, 179, 179);
 
-}
-
-.nav-link:hover {
-    color: rgb(255, 255, 255);
-}
-
-/* .nav-link {
-    background-color: white;
-    color: black;
-} */
-
-/* #v-pills-tabContent {
-    background-color: white;
-    color: black;
-} */
-
-/* .tab-content>.tab-pane>url {
-    height: 880px;
-    width: 1698px;
-
-} */
 
 /* 人物角色介紹按鈕結束 */
 /* 電影介紹海報開始 */
@@ -337,3 +313,45 @@ body,
 }
 
 /* 生物種族結束 */
+
+/* youtube跑馬燈開始 */
+.youtube,
+.srcs {
+    display: flex;
+    flex-direction: row;
+}
+.youtube{
+    width: 90%;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.im{
+    padding: 10px;
+}
+
+.arrow{
+color: white;
+font-size: 3.5rem;
+}
+
+iframe{
+    width: 465px;
+    height: 315px;
+}
+
+@media only screen and (max-width: 1200px) {
+    iframe{
+    width: 350px;
+    height: 215px;
+}
+}
+
+@media only screen and (max-width: 768px) {
+    iframe{
+    width: 265px;
+    height: 215px;
+}
+}
+/* youtube跑馬燈結束 */
