@@ -7,12 +7,12 @@
     <div class="srcs">
         <?php
         $srcs = array(
-            "https://www.youtube.com/embed/nf3yY3VzBOo",
-            "https://www.youtube.com/embed/kFZ28x0LWro",
-            "https://www.youtube.com/embed/qozj4292T-g",
-            "https://www.youtube.com/embed/tyibVA3Yz4k",
-            "https://www.youtube.com/embed/qozj4292T-g",
-            "https://www.youtube.com/embed/tyibVA3Yz4k"
+            "https://www.youtube.com/embed/xlbp2uriAM8",
+            "https://www.youtube.com/embed/UpMM_b8E1S4",
+            "https://www.youtube.com/embed/Ukl0PKjQL_o",
+            "https://www.youtube.com/embed/j0seO3yo504",
+            "https://www.youtube.com/embed/j8wMzYeHQew",
+            "https://www.youtube.com/embed/Jqfe4rJuPYM"
         );
         foreach ($srcs as $key => $src) {
 
