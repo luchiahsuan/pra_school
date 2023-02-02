@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .play {
+            margin: 0 auto;
+            text-align: center;
+
+        }
+
+        .box {
+            height: 30vh;
+            width: 50%;
+            border: 1px solid black;
+            margin: 0 auto;
+            margin-bottom: 30px;
+
+        }
+
+        .box2 {
+            height: 10vh;
+            width: 50%;
+            border: 1px solid black;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin: 0 auto;
+            align-items: center;
+        }
+
+        button {
+            height: 50%;
+            width: 40%;
+            margin-left: 5px;
+        }
+
+        h3 {
+            color: blue;
+        }
+
+        p {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="play">
+        <h1>投籃大賽</h1>
+        <div class="box">
+            <h4>分數</h4>
+            <h3><b>最高歷史分數</b> <span>123</span> </h3>
+            <p id="score">0</p>
+            <hr>
+            <div id="time">0</div>
+
+        </div>
+        <div class="box2">
+            <button id="timeBtn">開始</button>
+            <button id="scoreBtn">進球</button>
+            <button id="resetBtn">重置</button>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js"
+    integrity="sha512-tWHlutFnuG0C6nQRlpvrEhE4QpkG1nn2MOUMWmUeRePl4e3Aki0VB6W1v3oLjFtd0hVOtRQ9PHpSfN6u6/QXkQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+    const timeBtn = $('#timeBtn');
+    const scoreBtn = $('#scoreBtn');
+    const resetBtn = $('#resetBtn');
+    const score = $('#score');
+    const mytime = $('#time');
+    let sum = 0;
+    let time = 60;
+
+    $('#scoreBtn').click(function plus() {
+        // console.log('123')
+        let i = time;
+
+        if (i < 50) {
+            sum += 3;
+        } else {
+            sum += 2;
+        }
+        score.text(sum);
+    }
+    );
+
+    scoreBtn.hide();
+
+    timeBtn.click(function () {
+        timeGo();
+        $(this).hide();
+        scoreBtn.show();
+    })
+
+    function timeGo() {
+        let i = time;
+
+        timer = setInterval(function () {
+            mytime.text(i);
+            i--;
+            if (i < 0) {
+                clearInterval(timer);
+            }
+        }, 1000);
+        console.log('time')
+    }
+
+    $('#resetBtn').click(function reset() {
+        score.text(0);
+        scoreBtn.hide();
+        timeBtn.show();
+    }
+    );
+
+
+
+
+</script>
