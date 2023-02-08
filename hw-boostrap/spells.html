@@ -1,0 +1,67 @@
+<div class="spells">
+    <button class="get_spells" id="apple">我想學咒語</button>
+    <div class="spell">
+        <!-- <table>
+            <tr>
+                <td>咒語：</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>用途：</td>
+                <td></td>
+            </tr>
+        </table> -->
+
+    </div>
+
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js"
+    integrity="sha512-tWHlutFnuG0C6nQRlpvrEhE4QpkG1nn2MOUMWmUeRePl4e3Aki0VB6W1v3oLjFtd0hVOtRQ9PHpSfN6u6/QXkQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+
+
+    $(function () {
+
+        $.ajax({
+            url: "https://harry-potter-api-en.onrender.com/spells",
+            type: "get",
+            dataType: 'json',
+            success: function (res) {
+                console.log('res', res);
+                const spell = $('.spell');
+                let data = res[2];
+                console.log('data', data);
+                let spells = "";
+                const apple = $('#apple');
+
+                apple.click(() => {
+                    let num = getRandom(72);
+
+                    function getRandom(x) {
+                        return Math.floor(Math.random() * x);
+                    };
+                    spells = `
+                        <table>
+                            <tr>
+                                <td>咒語：${res[num].spell}</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>用途：${res[num].use}</td>
+                                <td></td>
+                            </tr>
+                        </table>
+                    `;
+                    spell.append(spells);
+
+                });
+
+            }
+        });
+    })
+
+</script>
