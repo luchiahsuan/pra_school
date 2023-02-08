@@ -1,6 +1,8 @@
 <style>
     .characters {
         margin: 0 auto;
+        width: 60%;
+        font-size: 20px
     }
 
     .tab {
@@ -23,6 +25,7 @@
         justify-content: center;
         flex-direction: row;
         margin-bottom: 30px;
+        
     }
 
     .charactersthing {
@@ -38,8 +41,28 @@
 
     .charactersthing>div>img {
         margin-right: 20px;
+        width: 200px;
+    }
+
+    @media only screen and (max-width: 1200px) {
+        .characters {
+        width: 90%;
+        font-size: 18px
 
     }
+}
+
+    @media only screen and (max-width: 768px) {
+        .characters {
+        width: 90%;
+        font-size: 16px
+
+    }
+    .charactersthing>div>img {
+        width: 150px;
+    }
+
+}
 
 </style>
 <div class="characters">
@@ -61,7 +84,7 @@
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <script>
-    $("charactersthing").hide();
+    $(".charactersthing").hide();
 
     $(function () {
 
@@ -88,8 +111,8 @@
 
                     `;
                     textContent += `
-                    <div class="charactersthing">
-                    <div><img src="${value.image}" alt="" style=" width: 100px;"></div>
+                    <div id="charactersthing" class="charactersthing">
+                    <div><img src="${value.image}" alt="" ></div>
                         <div>
                             <table>
                                 <tr>
@@ -127,10 +150,9 @@
         });
     });
 
-</script>
 
-<script>
-    $("charactersthing").hide();
+    
+    $(".charactersthing").hide();
     // $("charactersname").click(function () {
     //     $("charactersthing").toggle();
     // });
