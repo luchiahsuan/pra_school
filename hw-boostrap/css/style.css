@@ -19,10 +19,10 @@ body,
     height: 850px;
 }
 
-/* 人物角色介紹按鈕 */
+/* 咒語按鈕 */
 
 
-/* 人物角色介紹按鈕結束 */
+/* 咒語按鈕結束 */
 /* 電影介紹海報開始 */
 .accordion {
     width: 100%;
@@ -320,38 +320,47 @@ body,
     display: flex;
     flex-direction: row;
 }
-.youtube{
+
+.youtube {
     width: 90%;
     margin: 0 auto;
     justify-content: center;
     align-items: center;
 }
 
-.im{
+.im {
     padding: 10px;
 }
 
-.arrow{
-color: white;
-font-size: 3.5rem;
+.arrow {
+    color: white;
+    font-size: 3.5rem;
 }
 
-iframe{
+iframe {
     width: 465px;
     height: 315px;
 }
 
 @media only screen and (max-width: 1200px) {
-    iframe{
-    width: 350px;
-    height: 215px;
-}
+    iframe {
+        width: 350px;
+        height: 215px;
+    }
 }
 
 @media only screen and (max-width: 768px) {
-    iframe{
-    width: 265px;
-    height: 215px;
+    iframe {
+        width: 265px;
+        height: 215px;
+    }
 }
-}
+
 /* youtube跑馬燈結束 */
+
+#back {
+    text-align: center;
+    color: white;
+    margin: 0 auto;
+    text-decoration: none;
+}

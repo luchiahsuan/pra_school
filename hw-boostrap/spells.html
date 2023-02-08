@@ -1,5 +1,43 @@
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Babylonica">
+
+<style>
+    .get_spells {
+        margin-bottom: 20px;
+    }
+
+    .spells {
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .spells button {
+
+        background-image: url("./image/spells_bg.jpg");
+        width: 10%;
+        height: 50px;
+        font-size: large;
+
+    }
+
+    .spell>table {
+        background-image: url("./image/spells_bg.jpg");
+        text-align: center;
+        margin: 0 auto;
+
+        font-family: Babylonica;
+        font-weight: 600;
+        font-size: xx-large;
+        margin-bottom: 10px;
+
+    }
+    .spell_learn tr td{
+        padding: 20px;
+
+    }
+</style>
+
 <div class="spells">
-    <button class="get_spells" id="apple">我想學咒語</button>
+    <button class="get_spells" id="get_spells">點擊學咒語</button>
     <div class="spell">
         <!-- <table>
             <tr>
@@ -17,6 +55,7 @@
 
 </div>
 
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js"
     integrity="sha512-tWHlutFnuG0C6nQRlpvrEhE4QpkG1nn2MOUMWmUeRePl4e3Aki0VB6W1v3oLjFtd0hVOtRQ9PHpSfN6u6/QXkQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -27,7 +66,7 @@
     $(function () {
 
         $.ajax({
-            url: "https://harry-potter-api-en.onrender.com/spells",
+            url: "./json/spells.js",
             type: "get",
             dataType: 'json',
             success: function (res) {
@@ -36,22 +75,22 @@
                 let data = res[2];
                 console.log('data', data);
                 let spells = "";
-                const apple = $('#apple');
+                const get_spells = $('#get_spells');
 
-                apple.click(() => {
+                get_spells.click(() => {
                     let num = getRandom(72);
 
                     function getRandom(x) {
                         return Math.floor(Math.random() * x);
                     };
                     spells = `
-                        <table>
+                        <table class="spell_learn">
                             <tr>
-                                <td>咒語：${res[num].spell}</td>
+                                <td >Spell：${res[num].spell}</td>
                                 <td></td>
                             </tr>
                             <tr>
-                                <td>用途：${res[num].use}</td>
+                                <td>Use For：${res[num].use}</td>
                                 <td></td>
                             </tr>
                         </table>

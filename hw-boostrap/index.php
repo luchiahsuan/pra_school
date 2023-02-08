@@ -18,16 +18,8 @@
   <?php
   include "./nav.html"
   ?>
-  <!-- 跑馬燈 -->
-  <!-- <?php
-  include "./carousel.html"
-  ?>
-  <div class="container-fluid"><br>
-    <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-    <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-    <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-    <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  </div> -->
+
+
   <!-- 電影海報 -->
   <hr>
   <h1 class="tittle" id="movie-poster"><br>- 電影海報 -<br></h1>
@@ -40,18 +32,24 @@
   <?php
   include "./all_characters.html"
   ?>
-
-<hr>
-  <h1 class="tittle" id="magic_biology"><br>- 生物與群族介紹 -<br></h1>
+  <hr id="spells">
+  <h1 class="tittle"><br>- 一起學咒語嗎？ -<br></h1>
+  <?php
+  include "./spells.html"
+  ?>
+  <hr id="magic_biology">
+  <h1 class="tittle" ><br>- 生物與群族介紹 -<br></h1>
   <?php
   include "./magic_biology.html"
   ?>
 
-<hr>
-  <h1 class="tittle" id="youtube"><br>- 幕後花絮影片 -<br></h1>
+  <hr  id="youtube">
+  <h1 class="tittle"><br>- 幕後花絮影片 -<br></h1>
   <?php
   include "./youtube.php"
   ?>
+<hr >
+  <a id="back" href="#movie-poster">回到最上面</a>
 </body>
 
 </html>
