@@ -271,6 +271,16 @@ body,
         margin-bottom: 10px;
 
     }
+
+        .mbrow1,
+    .mbrow2,
+    .mbrow3,
+    .mbrow4,
+    .mbrow5,
+    .mbrow6>div>p {
+        font-size: larger;
+
+    }
 }
 
 @media only screen and (max-width: 768px) {
@@ -309,6 +319,16 @@ body,
     .mbrow5-1,
     .mbrow6-1 {
         background-color: #000;
+    }
+
+    .mbrow1,
+    .mbrow2,
+    .mbrow3,
+    .mbrow4,
+    .mbrow5,
+    .mbrow6>div>p {
+        font-size: larger;
+
     }
 }
 
