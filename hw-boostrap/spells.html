@@ -53,6 +53,7 @@
 
 <div class="spells">
     <button class="get_spells" id="get_spells">點擊學咒語</button>
+    <button class="remove_spells" id="remove_spells">清除已知咒語</button>
     <div class="spell">
         <!-- <table>
             <tr>
@@ -91,6 +92,7 @@
                 console.log('data', data);
                 let spells = "";
                 const get_spells = $('#get_spells');
+                const remove_spells = $('#remove_spells');
 
                 get_spells.click(() => {
                     let num = getRandom(72);
@@ -111,6 +113,11 @@
                         </table>
                     `;
                     spell.append(spells);
+
+                });
+
+                remove_spells.click(() => {
+                    spell.append(spells).remove();
 
                 });
 
