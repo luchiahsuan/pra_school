@@ -1,0 +1,83 @@
+<button type="button" id="" data-movie_name="神秘的魔法石">神秘的魔法石</button>
+<button type="button" id="" data-movie_name="消失的密室">消失的密室</button>
+<button type="button" id="" data-movie_name="阿茲卡班的逃犯">阿茲卡班的逃犯</button>
+<button type="button" id="" data-movie_name="火盃的考驗">火盃的考驗</button>
+<button type="button" id="" data-movie_name="鳳凰會的密令">鳳凰會的密令</button>
+<button type="button" id="" data-movie_name="混血王子的背叛">混血王子的背叛</button>
+<button type="button" id="" data-movie_name="死神的聖物Ⅰ">死神的聖物Ⅰ</button>
+<button type="button" id="" data-movie_name="死神的聖物ⅠⅠ">死神的聖物ⅠⅠ</button>
+
+<div class="movie">
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js"
+    integrity="sha512-tWHlutFnuG0C6nQRlpvrEhE4QpkG1nn2MOUMWmUeRePl4e3Aki0VB6W1v3oLjFtd0hVOtRQ9PHpSfN6u6/QXkQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+
+    $(function () {
+
+
+        const movie = $('.movie');
+        const tab = $('.tab');
+
+        $.ajax({
+            url: "./json/movie.js",
+            type: "get",
+            dataType: 'json',
+            success: function (res) {
+                console.log('res',res);
+                let data = res;
+                console.log('data', data);
+                let textContent = "";
+
+                $.each(data, function (key, value) {
+                    textContent += `
+                    <div id="movie_intro" class="movie_intro">
+                    <div><img src="${value.image}" alt="" ></div>
+                        <div>
+                            <table>
+                                <tr>
+                                    <td>${value.book}</td>
+                                </tr>
+                                <tr>
+                                    <td>${value.original_title}</td>
+                                </tr>
+                                <tr>
+                                    <td>${value.release_date}於美國上映</td>
+                                </tr>
+                                <tr>
+                                    <td>小說作者—${value.author}</td>
+                                </tr>
+                                <tr>
+                                    <td>導演—${value.director}</td>
+                                </tr>
+                                <tr>
+                                    <td style="weight:50%">${value.description}</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                        `;
+                });
+                movie.append(textContent);
+                $(".charactersthing").hide();
+
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+
+            }
+        });
+    });
+
+
+
+    // $("botton").on("click", (e) => {
+    //     $(".botton").removeClass('active');
+    //     $(e.target).addClass('active')
+    //     $(".movie").hide();
+    //     $(".movie").eq($(e.target).index()).show()
+    // })
+</script>

@@ -1,7 +1,8 @@
-{
+
     [
         {
             "id": 1,
+            "movie_name": "神秘的魔法石",
             "book": "《哈利波特－神秘的魔法石》",
             "original_title": "Harry Potter and the Sorcerer's Stone",
             "release_date": "2001年11月16日",
@@ -12,6 +13,7 @@
         },
         {
             "id": 2,
+            "movie_name": "消失的密室",
             "book": "《哈利波特－消失的密室》",
             "original_title": "Harry Potter and the chamber of secrets",
             "release_date": "2002年11月15日",
@@ -22,6 +24,7 @@
         },
         {
             "id": 3,
+            "movie_name": "阿茲卡班的逃犯",
             "book": "《哈利波特－阿茲卡班的逃犯》",
             "original_title": "Harry Potter and the Prisoner of Azkaban",
             "release_date": "2004年5月31日",
@@ -32,6 +35,7 @@
         },
         {
             "id": 4,
+            "movie_name": "火盃的考驗",
             "book": "《哈利波特－火盃的考驗》",
             "original_title": "Harry Potter and the Goblet of Fire",
             "release_date": "2005年11月18日",
@@ -42,6 +46,7 @@
         },
         {
             "id": 5,
+            "movie_name": "鳳凰會的密令",
             "book": "《哈利波特－鳳凰會的密令》",
             "original_title": "Harry Potter and the Order of the Phoenix",
             "release_date": "2007年7月11日",
@@ -52,6 +57,7 @@
         },
         {
             "id": 6,
+            "movie_name": "混血王子的背叛",
             "book": "《哈利波特－混血王子的背叛》",
             "original_title": "Harry Potter and the Half-Blood Prince",
             "release_date": "2009年7月15日",
@@ -62,6 +68,7 @@
         },
         {
             "id": 7,
+            "movie_name": "死神的聖物Ⅰ",
             "book": "《哈利波特－死神的聖物Ⅰ》",
             "original_title": "Harry Potter and the Deathly Hallows – Part 1",
             "release_date": "2010年11月19日",
@@ -72,6 +79,7 @@
         },
         {
             "id": 8,
+            "movie_name": "死神的聖物ⅠⅠ",
             "book": "《哈利波特－死神的聖物ⅠⅠ》",
             "original_title": "Harry Potter and the Deathly Hallows – Part 2",
             "release_date": "2011年7月15日",
@@ -81,4 +89,3 @@
             "image":"../image/movie/7-2-1.jpg"
         }
     ]
-}
