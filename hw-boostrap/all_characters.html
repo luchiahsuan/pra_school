@@ -25,7 +25,7 @@
         justify-content: center;
         flex-direction: row;
         margin-bottom: 30px;
-        
+
     }
 
     .charactersthing {
@@ -46,24 +46,22 @@
 
     @media only screen and (max-width: 1200px) {
         .characters {
-        width: 90%;
-        font-size: 18px
-
+            width: 90%;
+            font-size: 18px
+        }
     }
-}
 
     @media only screen and (max-width: 768px) {
         .characters {
-        width: 90%;
-        font-size: 16px
+            width: 90%;
+            font-size: 16px
+        }
+
+        .charactersthing>div>img {
+            width: 150px;
+        }
 
     }
-    .charactersthing>div>img {
-        width: 150px;
-    }
-
-}
-
 </style>
 <div class="characters">
     <div class="charactersname">
@@ -84,7 +82,6 @@
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <script>
-    $(".charactersthing").hide();
 
     $(function () {
 
@@ -142,6 +139,7 @@
                 });
                 charactersname.append(characters_name);
                 characters.append(textContent);
+                $(".charactersthing").hide();
 
             },
             error: function (jqXHR, textStatus, errorThrown) {
@@ -151,15 +149,6 @@
     });
 
 
-    
-    $(".charactersthing").hide();
-    // $("charactersname").click(function () {
-    //     $("charactersthing").toggle();
-    // });
-
-
-    // $(".characters").hide();
-    // $(".characters").eq(0).show();
 
     $(".charactersname").on("click", (e) => {
         $(".charactersname").removeClass('active');
